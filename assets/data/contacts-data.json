@@ -1,0 +1,56 @@
+{
+    "data" : [
+        {
+            "_id" : "daniel@hotmail.com",
+            "_class" : "com.isoftnet.model.Contact",
+            "primaryEmail" : "imail.daniel@gmail.com",
+            "email" : "locatedaniel@hotmail.com",
+            "group" : "WINDOWSLIVE",
+            "phoneNumber" : "7322928871",
+            "firstName" : "Daniel",
+            "lastName" : "Acquah",
+            "fullName" : "Daniel Acquah",
+            "active" : false,
+            "createdOn" : "26 Apr 2015 21:10:36",
+            "action" : "NEW"
+        }, {
+            "_id" : "peter@gmail.com",
+            "_class" : "com.isoftnet.model.Contact",
+           "primaryEmail" : "peter@gmail.com",
+            "email" : "peter@linkedin.com",
+            "group" : "LINKEDIN",
+            "phoneNumber" : "",
+            "firstName" : "Peter",
+            "lastName" : "Davis",
+            "fullName" : "Peter Davis",
+            "active" : false,
+            "createdOn" : "26 Apr 2015 21:10:36",
+            "action" : "NEW"
+        }, {
+            "_id" : "fokuo@gmail.com",
+            "_class" : "com.isoftnet.model.Contact",
+            "primaryEmail" : "fokuo@gmail.com",
+            "email" : "fokuo@gmail.com",
+            "group" : "GOOGLE",
+            "phoneNumber" : "011442089771289",
+            "firstName" : "Billy",
+            "lastName" : "Billy",
+            "fullName" : "Billy Billy",
+            "active" : false,
+            "createdOn" : "26 Apr 2015 21:10:36",
+            "action" : "NEW"
+        }, {
+            "_id" : "lils@facebook.com",
+            "_class" : "com.isoftnet.jobnect.model.Contact",
+            "primaryEmail" : "lils@gmail.com",
+            "email" : "lilianasante@hotmail.com",
+            "group" : "FACEBOOK",
+            "firstName" : "Lils",
+            "lastName" : "Lils",
+            "fullName" : "Lils Lils",
+            "active" : false,
+            "createdOn" : "26 Apr 2015 21:10:36",
+            "action" : "NEW"
+        }
+    ]
+}

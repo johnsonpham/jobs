@@ -1,0 +1,18 @@
+{
+    "data" : {
+        "_id" : "bee9fb9b021e354b@WINDOWSLIVE",
+        "_class" : "com.isoftnet.model.UserSocialData",
+        "socialId" : "daniel@msn.com",
+        "email" : "imail.daniel@gmail.com",
+        "title" : "Linkedin Connections",
+        "socialType" : "linkedin",
+        "contactCount" : 137,
+        "groupCount" : 0,
+        "groupMemberCount" : 0,
+        "date" : "May 26, 2015",
+        "time" : "9:10 PM",
+        "status" : "disconnect",
+        "createdOn" : "26 Apr 2015 19:41:00",
+        "action" : "NEW"
+    }
+}

@@ -1,0 +1,28 @@
+<div class="modal fade" id="sendActivationLinkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-title"><h2>Activate Account<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+            <div class="modal-body">
+                <form novalidate name="activationForm" ng-submit="sendActivationLinkModal.requestActiveCode()">
+                    <div ng-show="!sendActivationLinkModal.success.show">
+                        <div class="form-group" ng-class="{
+                                'has-error': activationForm.$submitted && 
+                                    (
+                                        activationForm.email.$error.required ||
+                                        activationForm.email.$error.email || 
+                                        sendActivationLinkModal.error.show
+                                    )
+                                ,
+                                'has-success': activationForm.$submitted && activationForm.email.$valid && !sendActivationLinkModal.error
+                                }">
+                           <input type="email" name="email" class="form-control" placeholder="Please enter your email" id="email" autofocus="" ng-model="sendActivationLinkModal.email" ng-hide="sendActivationLinkModal.loading"
+                                required> <span class="error-message" ng-show="activationForm.$submitted && activationForm.email.$error.required">Please enter your Email address.</span> <span class="error-message" ng-show="activationForm.$submitted && activationForm.email.$error.email">Invalid Email address.</span>                            <span class="error-message" ng-show="activationForm.$submitted && sendActivationLinkModal.error.show">{{sendActivationLinkModal.error.message}}</span> </div>
+                        <div class="form-group"> <button type="submit" class="btn btn-block btn-sm btn-primary">Activate</button> </div>
+                    </div>
+                    <div class="success-message" ng-show="sendActivationLinkModal.success.show">
+                        <h5 class="text-info">{{sendActivationLinkModal.success.message}}</h5> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

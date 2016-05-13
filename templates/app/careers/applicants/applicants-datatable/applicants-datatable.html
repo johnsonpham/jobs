@@ -1,0 +1,43 @@
+<div class="container table-responsive box-container">
+    <datatable-wrapper element-selector=".careers-toolbar">
+        <table datatable="ng" class="table table-sm table-bordered parent-table" cellspacing="0" width="100%" dt-options="applicantsCtrl.dtOptions" dt-column-defs="applicantsCtrl.dtColumns" dt-instance="applicantsCtrl.dtInstance">
+            <thead>
+                <tr>
+                    <th class="td-block no-sort text-md-center"> <label>
+                  <input class="checkbox" type="checkbox" ng-model="applicantsCtrl.selectedAll" ng-click="applicantsCtrl.selectAllApplicants()" />
+                  <span></span>
+                </label> </th>
+                    <th>View More</th>
+                    <th>Date Applied</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Notice Period</th>
+                    <th>Interview Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+              <!-- not have data -->
+                <tr ng-repeat="applicant in applicantsCtrl.applicants">
+                    <td class="td-block text-md-center"> <label>
+                        <input class="checkbox" type="checkbox" ng-model="applicant.selected" ng-click="applicantsCtrl.selectApplicant(applicant)" />
+                         <span></span>
+                        </label> 
+                    </td> 
+                    <td>{{ applicant.viewMore }}</td>
+                    <td>{{ applicant.dateApplied}}</td>
+                    <td>{{ applicant.fullName }}</td>
+                    <td>{{ applicant.email }}</td>
+                    <td>{{ applicant.phone }}</td>
+                    <td>{{ applicant.noticePeriod }}</td>
+                    <td>{{ applicant.interview }}</td>                       
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr ng-if="applicantsCtrl.selectedApplicant.length">
+                  <td colspan="8"><div class="careers-toolbar"></div></td>
+                </tr>
+             </tfoot>
+        </table>
+    </datatable-wrapper>
+</div>

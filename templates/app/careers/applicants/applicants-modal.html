@@ -1,0 +1,19 @@
+<div class="modal fade" ng-controller="ApplicantsController as applicantsCtrl">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-title"><h2>Applicants<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+            <div class="modal-body">
+                <ng-include src="'templates/app/careers/applicants/applicants-datatable/applicants-datatable.html'" include-replace></ng-include>
+
+                <!-- add form status -->
+                <applicants-form-status ng-show="applicantsCtrl.isShow"></applicants-form-status>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="applicantsCtrl.showSendEmailModal()" ng-disabled="applicantsCtrl.isDisable" class="btn btn-info">Send Message</button>
+                <button type="button" ng-click="applicantsCtrl.addFormStatus()" ng-disabled="applicantsCtrl.isDisable" class="btn btn-info">Add status</button>
+                <button type="button" ng-click="applicantsCtrl.ackReceipt()" ng-disabled="applicantsCtrl.isDisable" class="btn btn-info">Acknowledge Recept</button>
+                <button type="button" ng-click="applicantsCtrl.reject()" ng-disabled="applicantsCtrl.isDisable" class="btn btn-info">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>

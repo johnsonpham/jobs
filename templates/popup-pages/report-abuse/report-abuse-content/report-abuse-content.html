@@ -1,0 +1,43 @@
+<form id="form-reportAbuse" novalidate name="forms.reportAbuse" ng-submit="rpCtrl.submit(forms.reportAbuse)" role="form">
+    <div class="modal-body">
+    <!--   <div class="alert" role="alert" style="display:none;"></div> -->
+
+        <!-- This is radio for display -->
+        <fieldset class="radio-primary form-group">                        
+            <label>
+                <input type="radio" name="radioreport" value="1" checked="checked"><span class="circle"></span><span class="check"></span> Content not right
+            </label>         
+            <label>
+                <input type="radio" name="radioreport" value="2" /><span class="circle"></span><span class="check"></span> Violation Copyright
+            </label>        
+            <label>
+                <input type="radio" name="radioreport" value="3"><span class="circle"></span><span class="check"></span> Content Not Healthy
+            </label>              
+            <label>
+                <input type="radio" name="radioreport" value="4"><span class="circle"></span><span class="check"></span> Other idea
+            </label>                        
+        </fieldset> <!-- end .radio-primary -->
+
+        <fieldset class="form-group" ng-class="{
+                'has-error': forms.reportAbuse.$submitted && 
+                    (
+                        forms.reportAbuse.report.$error.required ||
+                        report.error
+                    )
+                ,
+                'has-success': forms.reportAbuse.$submitted && forms.reportAbuse.report.$valid
+                }">
+            <label for="report">Please report clearly <span class="required">*</span>:</label>
+            <textarea type="text" name="report" class="form-control" rows="5" id="report" autofocus="" ng-model="rpCtrl.report" required></textarea>    
+            <p><small>Sources/ images errors ... Thanks.</small></p>
+            <span class="error-message" ng-show="forms.reportAbuse.$submitted && forms.reportAbuse.report.$error.required">Please enter report at here...</span> 
+                        
+        </fieldset> <!-- end textarea report -->
+       
+    </div><!-- end .modal-body -->
+   
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-info">Send</button>
+        <button type="button" ng-click="close(false)" class="btn" data-dismiss="modal">Close</button>
+    </div><!-- end .modal-footer -->
+</form>

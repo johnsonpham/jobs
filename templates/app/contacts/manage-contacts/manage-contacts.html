@@ -1,0 +1,66 @@
+<section class="section sub-page manage-contacts">
+    <div class="box-container">
+        <div class="sub-page-header">
+            <div class="container">
+                <h2>Contacts</h2>
+            </div>
+        </div>
+        <div class="container sub-page-content">
+            <div class="contact-header">
+                <h2 class="contact-title">
+                    All contacts (<span class="contact-length">{{manageContacts.contacts.length}}</span>)
+                </h2>
+            </div>
+            <div class="contact-body">
+                <datatable-wrapper element-selector=".contacts-toolbar" ng-show="manageContacts.loading">
+                    <table datatable="ng" class="table table-sm table-bordered parent-table" cellspacing="0" width="100%" dt-options="manageContacts.dtOptions" dt-column-defs="manageContacts.dtColumns" dt-instance="manageContacts.dtInstance">
+                        <thead>
+                            <tr ng-if="manageContacts.selectedContacts.length">
+                                <td colspan="15"><div class="contacts-toolbar"></div></td>
+                            </tr>
+                            <tr>
+                                <th class="td-block no-sort text-md-center col-checkbox">
+                                    <label>
+                                        <input class="checkbox" type="checkbox" ng-model="manageContacts.selectedAll" ng-click="manageContacts.selectAllContacts()"><span></span>
+                                    </label>
+                                </th>
+                                <th class="text-md-left">First Name</th>
+                                <th class="text-md-left">Last Name</th>
+                                <th class="text-md-left">Email</th>
+                                <th class="col-small">Phone Number</th>
+                                <th class="col-small">Source</th>
+                                <th class="col-small"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(index, contact) in manageContacts.contacts track by index" class="{{contact.selected?'item-selected':''}}">
+                                <td class="td-block text-md-center">
+                                    <label>
+                                        <input class="checkbox" type="checkbox" ng-model="contact.selected" ng-click="manageContacts.selectContact(contact)"><span></span>
+                                    </label> 
+                                </td>
+                                <td>{{ contact.firstName }}</td>
+                                <td>{{ contact.lastName }}</td>
+                                <td>{{ contact.email }}</td>
+                                <td>{{ contact.phoneNumber }}</td>
+                                <td>{{ contact.group }}</td>
+                                <td>
+                                    <div class="contact-group-container">
+                                        <a href="" class="sofnet-icon">
+                                            <i class="fa fa-ellipsis-v" tooltip data-placement="bottom" title="" data-original-title="Please enter your Real Name, for people you know to recognize you. No Nicknames or Aliases."></i> 
+                                        </a>
+                                        <div class="contact-group-content">
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </datatable-wrapper>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spinner" ng-if="!manageContacts.loading"></div>
+<!-- End manage contacts section

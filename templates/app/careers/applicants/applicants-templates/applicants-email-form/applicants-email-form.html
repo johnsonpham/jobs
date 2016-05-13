@@ -1,0 +1,34 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-title"><h2>Send Email<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+            <div class="modal-body">
+                <div class="add-email">  
+                    <form class="sofnet-form" novalidate name="forms.email" ng-submit="email.submitForm()">
+                        <div class="form-group" ng-class="{
+                                'has-error': forms.email.$submitted && 
+                                    (
+                                        forms.email.formEmail.$error.required ||
+                                        email.error
+                                    )
+                                ,
+                                'has-success': forms.email.$submitted && forms.email.formEmail.$valid
+                                }">      
+                            <textarea type="text" name="formEmail" class="form-control" rows="3" id="inputForm" autofocus ng-model="formEmail" required placeholder="Please for comments at here..."></textarea>
+                            <span class="error-message" ng-show="forms.email.$submitted && forms.email.formEmail.$error.required">Please enter Comment.</span>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-info">Send</button>
+                            
+                            <button type="button" ng-click="close(false)" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                
+            </div>
+
+        </div>
+    </div>
+</div>

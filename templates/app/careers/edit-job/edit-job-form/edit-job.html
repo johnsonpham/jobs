@@ -1,0 +1,132 @@
+<form class="sofnet-form" novalidate name="forms.job" ng-submit="careerEditModal.save()">
+	<div class="modal-content">
+		<div class="modal-body">
+			<div class="career-edit-form">
+				<div class="form-group" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.shortDescription.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.shortDescription.$valid
+                            }">
+					<label class="col-md-3">short description:</label>
+					<div class="col-md-9">
+						<input type="text" name="shortDescription" ng-model="careerEditModal.job.shortDescription" class="form-control" placeholder="" id="shortDescription" required />
+						<span class="error-message" ng-show="forms.job.$submitted && forms.job.shortDescription.$error.required">Please enter short description.</span>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.longDescription.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.longDescription.$valid
+                            }">
+					<label class="col-md-3">long description:</label>
+					<div class="col-md-9">
+						<input type="text" name="longDescription" class="form-control" placeholder="" id="longDescription" ng-model="careerEditModal.job.longDescription" required>
+						<span class="error-message" ng-show="forms.job.$submitted && forms.job.longDescription.$error.required">Please enter long description.</span>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.salary.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.salary.$valid
+                            }">
+					<label class="col-md-3">salary:</label>
+					<div class="col-md-9" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.salary.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.salary.$valid
+                            }">
+						<input type="text" name="salary" class="form-control" placeholder="" id="salary" ng-model="careerEditModal.job.salary.value" required>
+						<span class="error-message" ng-show="forms.job.$submitted && forms.job.salary.$error.required">Please enter salary.</span>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.skills.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.skills.$valid
+                            }">
+					<label class="col-md-3">skills:</label>
+					<div class="col-md-9">
+						<input type="text" name="skills" class="form-control" placeholder="" id="skills" ng-model="careerEditModal.job.skills" required>
+						<span class="error-message" ng-show="forms.job.$submitted && forms.job.skills.$error.required">Please enter skills.</span>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.profession.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.profession.$valid
+                            }">
+					<label class="col-md-3">profession:</label>
+					<div class="col-md-9">
+						<input type="text" name="profession" class="form-control" placeholder="" id="profession" ng-model="careerEditModal.job.profession" required>
+						<span class="error-message" ng-show="forms.job.$submitted && forms.job.profession.$error.required">Please enter profession.</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3">job type:</label>
+					<div class="col-md-9">
+						<label class="radio-inline">
+                            <input type="radio" name="jobType" ng-model="careerEditModal.job.jobType" value="Full Time"> Full Time
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="jobType" ng-model="careerEditModal.job.jobType" value="Part Time"> Part Time
+                        </label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3">status:</label>
+					<div class="col-md-9">
+                        <label class="radio-inline">
+                            <input type="radio" name="status" ng-model="careerEditModal.job.status" value="OPEN"> Open
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="status" ng-model="careerEditModal.job.status" value="CLOSE"> Close
+                        </label>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+                            'has-error': forms.job.$submitted && 
+                                (
+                                    forms.job.duration.$error.required ||
+                                    forms.job.error
+                                )
+                            ,
+                            'has-success': forms.job.$submitted && forms.job.duration.$valid
+                            }">
+					<label class="col-md-3">duration:</label>
+					<div class="col-md-9">
+						<input type="text" name="duration" class="form-control" placeholder="" id="duration" ng-model="careerEditModal.job.duration.formatted" required>
+						<span class="error-message" ng-show="forms.job.$submitted && forms.job.duration.$error.required">Please enter duration.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-info">Save</button>
+		<button type="button" class="btn" ng-click="careerEditModal.closeModal(false)" data-dismiss="modal">Cancel</button>
+	</div>
+</form>

@@ -1,0 +1,16 @@
+<div class="modal fade" ng-controller="EventsController as EventsCtrl">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-title"><h2>Events<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+            <div class="modal-body">
+                <ng-include src="'templates/app/careers/events/events-datatable/events-datatable.html'" include-replace></ng-include>
+            </div>
+             <div class="modal-footer">            
+                <button type="button" ng-click="close(false)" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+       
+
+    </div>
+</div>

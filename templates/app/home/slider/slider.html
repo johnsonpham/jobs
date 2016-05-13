@@ -1,0 +1,15 @@
+<section class="section slider" ng-controller="SliderCtrl as slider">
+    <flex-slider slide="slide in slider.slides track by $index" control-nav="false" direction-nav="true">
+        <li class="slide" ng-style="{'background-image': 'url(\'assets/' + slide.img + '\')'}">
+            <div class="message-box">
+                <h2 class="title">NEED AN EMPLOYEE?</h2>
+                <h3 class="subtitle">Hundreds of jobs from all over the globe, right at your fingertips.</h3>
+                <a class="btn btn-primary btn-lg" href="" scroll-on-click scroll-to="#how-it-works">How it Works</a>
+                <a class="btn btn-primary btn-lg" ng-if="!app.isAuth" ui-sref="auth.login">Get Started</a>
+                <a class="btn btn-primary btn-lg" href="" ng-if="app.isAuth" scroll-on-click scroll-to="#services">Get Started</a> </div>
+        </li>
+    </flex-slider>
+    <div class="container">
+        <div class="slogan"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>Phasellus suscipit fermentum</span> dapibus. Praesent a risus sed eros <span>fringilla rhoncus</span>. Phasellus venenatis volutpat leo, at vulputate eros malesuada a. </div>
+    </div>
+</section>

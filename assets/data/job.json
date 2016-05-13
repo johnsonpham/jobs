@@ -1,0 +1,55 @@
+{
+    "_id" : "i1",
+    "_class" : "com.isoftnet.model.Job",
+    "applicants" : "",
+    "title" : "Java Developer",
+    "shortDescription" : "Java Engineer",
+    "skills" : "",
+    "profession" : "IT",
+    "jobType" : "Full Time",
+    "forwardedTo" : "",
+    "sentTo" : "",
+    "forwardedBy" : "",
+    "createdBy" : "imail.daniel@gmail.com",
+    "creatorName" : "Daniel Acquah",
+    "url" : "",
+    "company" : {
+        "address" : {
+            "address" : "",
+            "city" : "Robbinsville",
+            "state" : "New York",
+            "country" : "US",
+            "createdOn" : "25 Mar 2015 22:49:01",
+            "action" : "NEW"
+        },
+        "createdOn" : "25 Mar 2015 22:49:01",
+        "action" : "NEW"
+    },
+    "status" : "OPEN",
+    "creatorType" : "INDIVIDUAL",
+    "renewable" : false,
+    "referralFee" : {
+        "value" : 15000,
+        "unit" : "",
+        "symbol" : "US",
+        "period" : "",
+        "formatted" : "N/A"
+    },
+    "salary" : {
+        "value" : 100000,
+        "unit" : "DAY",
+        "symbol" : "US",
+        "period" : "",
+        "formatted" : "US 100000.0 per DAY"
+    },
+    "duration" : {
+        "unit" : "",
+        "symbol" : "",
+        "period" : "",
+        "formatted" : "N/A"
+    },
+    "formattedskills" : [],
+    "name" : "Job",
+    "createdOn" : "25 Mar 2015 22:49:01",
+    "action" : "NEW"
+}

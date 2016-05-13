@@ -1,0 +1,85 @@
+<section class="section sub-page contactus">
+    <div class="box-container">
+      <div class="sub-page-header">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p class="lead">Keep reading this page to figure out how we got started and who is behind it!</p>
+        </div>
+      </div>
+      <div class="container contact-us-content">
+        
+        <!-- google maps -->
+        <section class="google-map-container">
+            <googlemaps latlng="{lat: 40.2824936, lng: -76.1314771}" marker-options="{position: {lat: 40.2824936, lng: -76.1314771} }"></googlemaps>
+        </section>
+        <!-- google maps end -->
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p-l-0">
+          <h4>Contact Form</h4>
+          <form role="form" novalidate name="forms.contact" ng-submit="contactUs.submit(forms.contact)">
+
+            <fieldset class="form-group">
+              <label for="nameContact">Name :</label>
+              <input type="text" class="form-control inputtext" id="nameContact" placeholder="Enter Name" />
+            </fieldset>
+
+            <fieldset class="form-group" ng-class="{
+                            'has-error': forms.contact.$submitted && 
+                                (
+                                    forms.contact.email.$error.required ||
+                                    forms.contact.error
+                                )
+                            ,
+                            'has-success': forms.contact.$submitted && forms.contact.email.$valid
+                            }">
+              <label for="email">Email address <span class="required">*</span> :</label>
+              <input type="email" name="email" ng-model="contactUs.email" class="form-control inputtext" id="email" placeholder="Please enter email" required />  
+              <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.email.$error.required">Please enter email...</span>    
+              <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.email.$error.email">Email not right.</span>      
+            </fieldset>
+            
+            <fieldset class="form-group" ng-class="{
+                            'has-error': forms.contact.$submitted && 
+                                (
+                                    forms.contact.message.$error.required ||
+                                    forms.contact.error
+                                )
+                            ,
+                            'has-success': forms.contact.$submitted && forms.contact.message.$valid
+                            }">
+              <label for="message">Message <span class="required">*</span> :</label>
+              <textarea class="form-control" name="message" id="message" rows="8" placeholder="Please enter Message ... " required ng-model="contactUs.message"></textarea>
+              <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.message.$error.required">Please enter message......</span>              
+            </fieldset>
+            
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Submit" />
+              <input type="reset" class="btn btn-primary" value="Reset"  />
+            </div>
+            
+          </form>
+        </div> 
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p-r-0">
+            <aside class="row">              
+              <div class="container">    
+                <h4>Informations</h4>                 
+                <p>Morbi eros bibendum lorem ipsum dolor pellentesque pellentesque bibendum. </p>
+                <p>45 Park Avenue, Apt. 303 <br />
+                  New York, NY 10016 </p>
+
+                <ul>
+                  <li><i class="fa fa-phone"></i> &nbsp;&nbsp; <span>+ 12 345 678 910</span></li>
+                  <li><i class="fa fa-envelope"></i> &nbsp;&nbsp;<span>admin@admin.com</span></li>
+                  <li><i class="fa fa-globe"></i> &nbsp;&nbsp;<span>www.localhost.com</span></li>
+                </ul>
+              </div>
+            </aside>
+
+        </div> 
+
+      </div>
+        
+    </div>
+</section>
+<!-- end page contactus -->

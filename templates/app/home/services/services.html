@@ -1,0 +1,15 @@
+<section class="section services" id="services" ng-controller="ServicesCtrl as services">
+    <div class="title-block">
+        <h2 class="title">OUR SERVICES</h2> </div>
+    <div class="container services-container">
+        <div class="col-sm-4 col-lg-4" ng-repeat="service in services.services">
+            <div class="card"> <img class="card-img-top" ng-src="{{service.image}}">
+                <div class="card-block">
+                    <h4 class="card-title">
+                        <i class="fa {{service.icon}}"></i> {{service.title}}
+                    </h4>
+                    <p class="card-text">{{service.description}}</p> <a class="read-more" href="#">Read More »</a> <a ng-href="{{service.link.url}}" class="btn btn-primary btn-lg">{{service.link.name}}</a> </div>
+            </div>
+        </div>
+    </div>
+</section>

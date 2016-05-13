@@ -1,0 +1,58 @@
+<footer class="footer" ng-controller="FooterController as footerCtrl">
+    <div class="container">
+        <div class="row footer-link">
+            <div class="col-xs-6 col-md-3 legal-block">
+                <h3 class="footer-title">Legal</h3>
+                <ul>
+                    <li> <a class="various" href ui-sref="app.copyright" id="cpr">Copyright</a> </li>
+                    <li> <a class="various" href ui-sref="app.policy" id="policy">Policy</a> </li>
+                    <li> <a class="various" href ui-sref="app.termsConditions" id="tncRead1">Terms and Conditions</a> </li>
+                    <li> <a class="various" href ui-sref="app.privacy" id="privacy">Privacy</a> </li>
+                </ul>
+            </div>
+            <div class="col-xs-6 col-md-3 support-block">
+                <h3 class="footer-title">Support</h3>
+                <ul>
+                    <li> <a class="various" ui-sref="app.help" href>Help</a> </li>
+                    <!--<li> <a class="various" href ui-sref="app.news">News</a> </li>-->
+                    <li> <a class="various" href ng-click="footerCtrl.showReportAbuseModal()">Report Abuse</a> </li>
+                    <li> <a class="various" href ng-click="footerCtrl.showContactSupportModal()">Contact Support</a> </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-2 info-block">
+                <h3 class="footer-title">Information</h3>
+                <ul>
+                    <li> <a class="various" href ui-sref="app.aboutus">About Us</a> </li>
+                    <li> <a class="various" href ng-click="footerCtrl.showFeedbackModal()">Feedback</a> </li>
+                    <li> <a class="various" href ng-click="footerCtrl.showSuggestionsModal()">Suggestions</a> </li>
+                    <li> <a class="various" href ui-sref="app.contactus">Contact Us</a> </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-4 subscribe-block">
+                <h3 class="footer-title">Mailing List</h3> <strong>Subscribe for news updates and more.</strong>
+                <form id="subscribe" name="subscribe" action="subscribe" method='POST'>
+                     <input name="email" type="email" id="text" placeholder="Enter Email" class="subscribe-email" />
+                    <button type="submit" class="btn btn-info btn-subscribe" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!--<div class="col-md-12 social-buttons-block">-->
+            <!--<sharethis share-url="http://softnet.elasticbeanstalk.com/" button-type="count"></sharethis>-->
+        <!--</div>-->
+    </div>
+    <div class="row  social-block">
+        <div class="container">
+            <div class="col-md-12">
+                <h3 class="footer-title">Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-12 copyright-block"> Copyright 2016 All Rights Resevered. www.softnet.com </div>
+        </div>
+    </div>
+</footer>

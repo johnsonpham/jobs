@@ -1,0 +1,68 @@
+<div class="container" ng-controller="ImportContactsCtrl as importContacts">
+    <div class="row">
+        <div class="col-xs--12 col-sm-8 p-n">
+            <div class="col-xs-12 col-sm-4 p-n">
+                <div class="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
+                    <div class="status-item">
+                        <div class="col-sm-12 p-n">
+                            <span class="hi-icon contact-number"></span>
+                        </div>
+                        <div class="col-sm-12 p-n">
+                            <strong>{{ importContacts.cstatus.contactCount || 0}}</strong>
+                            <p>Contacts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
+                    <div class="status-item">
+                        <div class="col-sm-12 p-n">
+                            <span class="hi-icon group-number"></span>
+                        </div>
+                        <div class="col-sm-12 p-n">
+                            <strong>{{ importContacts.cstatus.groupCount || 0}}</strong>
+                            <p>Groups</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
+                    <div class="status-item">
+                        <div class="col-sm-12 p-n">
+                            <span class="hi-icon group-member-number"></span>
+                        </div>
+                        <div class="col-sm-12 p-n">
+                            <strong>{{ importContacts.cstatus.groupMemberCount || 0}}</strong>
+                            <p>Groups Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs--12 col-sm-4 connect-by-social p-n">
+            <div class="col-xs-12 col-sm-12 connection-status">
+                <ul class="status text-right">
+                    <li>
+                        <a class="txt-connect text-uppercase" ng-if="importContacts.cstatus.status==='disconnect'">connect</a>
+                        <a class="txt-connect text-uppercase" ng-if="importContacts.cstatus.status==='connected'">disconnect</a>
+                    </li>
+                    <li>{{ importContacts.cstatus.date }}</li>
+                    <li>{{ importContacts.cstatus.time }}</li>
+                    <li ng-if="importContacts.cstatus.status==='disconnect'"><button class="btn btn-success" ng-click="importContacts.doConnect($event)">Done</button></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 text-center p-n">
+                <ul class="social-links social-icons">
+                    <li><a href="" class="facebook" ng-click="importContacts.getSocialContacts('facebook', $event)"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="" class="twitter" ng-click="importContacts.getSocialContacts('twitter', $event)"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="" class="yahoo" ng-click="importContacts.getSocialContacts('yahoo', $event)"><i class="fa fa-yahoo"></i></a></li>
+                    <li><a href="" class="linkedin" ng-click="importContacts.getSocialContacts('linkedin', $event)"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="" class="gmail" ng-click="importContacts.getSocialContacts('gmail', $event)"><i class="fa fa-gmail"></i></a></li>
+                    <li><a href="" class="instagram" ng-click="importContacts.getSocialContacts('instagram', $event)"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
