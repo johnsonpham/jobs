@@ -1,0 +1,62 @@
+/*
+    datatable extension 
+*/
+
+/*no sort column*/
+.data-listing{
+    max-width: 1170px;
+    overflow: auto;
+}
+.dataTable .no-sort::after{display: none!important;}
+table.table thead .sorting_desc:before{color: #555}
+.section.careers .dataTables_wrapper .dataTables_filter{
+    width: 100%;
+    display: block;
+    clear: both;
+    float: left;
+    padding: 10px;
+}
+.section.careers .dataTables_wrapper .dataTables_filter label{
+    border: 1px solid rgba(0,0,0,.15);
+    padding: 0 5px 0 0;
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 4px;
+}
+.section.careers .dataTables_wrapper .dataTables_filter input{border: 0; border-radius: 0}
+.section.careers .dataTables_wrapper .dataTables_filter i{
+    float: right;padding: 6px 0 0 5px;}
+.dataTables_filter label{  margin: 0;}
+table.dataTable{margin-top: 0 !important; margin-bottom: 0 !important;}
+table.dataTable label{margin-bottom: 0; outline: none}
+.dataTables_length{padding-top: 10px;}
+div.dataTables_wrapper div.dataTables_length select{width: 60px !important; text-align: center}
+table.dataTable thead>tr>th.sorting{}
+.table thead th{border-bottom-width: 1px}
+.table-bordered{border-width: 0}
+table.table-bordered.dataTable th{background-color: #f7f7f7; font-weight: 500; color: #000; text-align: center}
+table.table-bordered.dataTable td{color: #555}
+i.ic-collapse-content{background: url(../assets/ic-collapse.png) left top no-repeat; width: 22px; height: 20px;}
+i.ic-collapse{background-position: 0 0}
+i.ic-collapsed{background-position: 0 -40px}
+.dataTables_wrapper .row{  margin: 0;  float: left;  width: 100%;}
+.filter-control-bars{width: 100%;  display: inline-block; background-color: #f4fcff;border-top: 1px solid #f1f1f1;}
+div.dataTables_wrapper div.dataTables_info{width: 100%;  display: inline-block; background-color: #f7f7f7; height: 50px;padding: 12px 10px;border-top: 1px solid #f1f1f1;}
+div.dataTables_wrapper div.dataTables_paginate{width: 100%;  display: inline-block;background-color: #f7f7f7; height: 50px; padding: 10px;border-top: 1px solid #f1f1f1;}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination{  margin: 0;}
+.pagination .page-item .page-link{padding: 5px 15px; font-weight: 500; font-size: 12px}
+.pagination .page-item.active .page-link{background: #f4f4f4 !important; color: #333 !important;}
+.checkbox+span:before, .radio+span:before{color: #333;}
+.checkbox:checked+span:before{content: "\f046"; font-size: 16px;}
+.checkbox+span:before, .radio+span:before{content: "\f096";  font-size: 16px;}
+.dataTables_wrapper .row.paging-block{  margin: 0;}
+.dataTables_wrapper .row.paging-block .col-md-5{padding: 0}
+.dataTables_wrapper .row.paging-block .col-md-7{padding: 0}
+.section.careers .careers-toolbar{  width: 100%; padding: 10px}
+.job-selected, .job-expand{background-color: #f4fcff}
+select.form-control:not([size]):not([multiple]){height: 30px}
+.paging-control{padding-top: 10px;}
+
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_desc_disabled:after{display: none}
+table.table thead .sorting_desc:before,
+table.table thead .sorting_asc:before{top: 23%; color: #000}

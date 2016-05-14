@@ -1,0 +1,66 @@
+{
+    "data" : [
+        {
+            "_id" : "bee9fb9b021e354b@WINDOWSLIVE",
+            "_class" : "com.isoftnet.model.UserSocialData",
+            "socialId" : "daniel@msn.com",
+            "email" : "imail.daniel@gmail.com",
+            "title" : "Windows Live Connections",
+            "socialType" : "WINDOWSLIVE",
+            "contactCount" : 137,
+            "groupCount" : 0,
+            "groupMemberCount" : 0,
+            "date" : "May 26, 2015",
+            "time" : "9:10 PM",
+            "status" : "connect",
+            "createdOn" : "26 Apr 2015 19:41:00",
+            "action" : "NEW"
+        }, {
+            "_id" : "q5fjad_c4u@LINKEDIN",
+            "_class" : "com.isoftnet.model.UserSocialData",
+            "socialId" : "daniel.acquah",
+            "email" : "imail.daniel@gmail.com",
+            "title" : "LinkedIn Connections",
+            "socialType" : "LINKEDIN",
+            "contactCount" : 138,
+            "groupCount" : 0,
+            "groupMemberCount" : 0,
+            "date" : "May 26, 2015",
+            "time" : "9:10 PM",
+            "status" : "connect",
+            "createdOn" : "26 Apr 2015 21:10:47",
+            "action" : "NEW"
+        }, {
+            "_id" : "imail.daniel@gmail.com@GOOGLE",
+            "_class" : "com.isoftnet.model.UserSocialData",
+            "socialId" : "imail.daniel@gmail.com",
+            "email" : "imail.daniel@gmail.com",
+            "title" : "GOOGLE Contacts",
+            "socialType" : "GOOGLE",
+            "contactCount" : 2795,
+            "groupCount" : 0,
+            "groupMemberCount" : 0,
+            "date" : "May 26, 2015",
+            "time" : "9:11 PM",
+            "status" : "connect",
+            "createdOn" : "26 Apr 2015 21:11:03",
+            "action" : "NEW"
+        }, {
+            "_id" : "daniel.acquah@FACEBOOK",
+            "_class" : "com.isoftnet.model.UserSocialData",
+            "socialId" : "daniel.acquah",
+            "email" : "imail.daniel@gmail.com",
+            "title" : "FaceBook Friends and GroupMembers",
+            "socialType" : "FACEBOOK",
+            "contactCount" : 256,
+            "groupCount" : 11,
+            "groupMemberCount" : 13602,
+            "date" : "May 26, 2015",
+            "time" : "9:11 PM",
+            "status" : "connect",
+            "createdOn" : "26 Apr 2015 21:11:54",
+            "action" : "NEW"
+        }
+
+    ]   
+}

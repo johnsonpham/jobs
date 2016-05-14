@@ -1,0 +1,18 @@
+<div class="modal fade sofnet-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="sofnet-form">
+                    <div class="logo-block">
+                        <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+                    </div>
+                    <div class="success-message">
+                        <h5 class="text-info">{{loginModal.message}}</h5> </div>
+                </form>
+            </div>
+            <div class="modal-footer"> <a href="" ng-click="loginModal.closeModal()" data-dismiss="modal">
+                Close
+            </a> </div>
+        </div>
+    </div>
+</div>

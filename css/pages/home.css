@@ -1,0 +1,9 @@
+.various {
+    cursor: pointer;
+}
+.page {
+	margin-top: 100px;
+}
+.section.slider{background-color: #363636;}
+.section.slider .slogan span{color: #53cbf1;}
+.section.slider .slogan{padding: 15px 0 45px 0}

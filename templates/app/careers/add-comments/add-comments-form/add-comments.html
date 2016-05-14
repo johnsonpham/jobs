@@ -1,0 +1,25 @@
+<div class="add-comments">
+    <form class="sofnet-form" novalidate name="forms.addComment" ng-submit="addCommentsModal.add()">
+        <div class="row form-group" ng-class="{
+                'has-error': forms.addComment.$submitted && 
+                    (
+                        forms.addComment.comments.$error.required ||
+                        addComment.error
+                    )
+                ,
+                'has-success': forms.addComment.$submitted && forms.addComment.comments.$valid
+                }">
+            <div class="col-md-3"> <label for="comments">Comment</label> </div>
+            <div class="col-md-9">
+                <textarea type="text" name="comments" class="form-control" rows="3" id="comments" autofocus="" ng-model="addCommentsModal.comments" ng-disabled="addCommentsModal.loading" required></textarea>
+                <span class="error-message" ng-show="forms.addComment.$submitted && forms.addComment.comments.$error.required">Please enter Comment.</span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="offset-md-3 col-md-9">
+                <button type="submit" class="btn btn-info">Save</button>
+                <button type="button" class="btn" ng-click="addCommentsModal.closeModal(false)" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

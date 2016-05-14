@@ -1,0 +1,16 @@
+<div class="modal fade"  ng-controller="StatusController as StCtrl">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-title"><h2>Status<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+            <div class="modal-body">
+                <ng-include src="'templates/app/careers/status/status-datatable/status-datatable.html'" include-replace></ng-include>
+
+                <add-form-status ng-show="StCtrl.isShow"></add-form-status>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="StCtrl.addFormStatus()" ng-disabled="StCtrl.isDisable" class="btn btn-info">Add status</button>
+                <button type="button" ng-click="close(false)" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

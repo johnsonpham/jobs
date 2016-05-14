@@ -1,0 +1,110 @@
+	/* Global */
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
+		text-align: right;
+	}
+	.text-justify {
+		text-align: justify;
+	}
+	.text-center {
+		text-align: center;
+	}
+
+	.news-listing{padding: 50px 0}
+	/*process new post*/
+	.news-page ul.clearlist {
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+	}
+	.news-page ul.clearlist li {
+		padding: 5px 5px 5px 0px;
+	}
+	
+	.news-page .slash-divider {
+		margin: 0px 7px;
+	}
+
+	.news-page .buttons-area {    	
+   	 	clear: both;
+   	 	margin-bottom: 20px; 
+   	 	overflow: hidden;
+   	}   	
+	.news-page .post-space, .news-page .icon-count {
+		margin: 0px 15px 0 0;
+	}
+	.news-page .post-info {
+		margin-bottom: 20px; 
+	}
+	.news-page .post-info a{font-size: 14px; font-weight: 300; padding-left: 5px;
+		display: inline-block;}
+	.news-page .img-media {
+		width: 150px;
+		height: 150px;
+	}
+	.news-page .widget-title {
+		text-transform: uppercase;
+	    font-size: 16px;
+	    font-weight: 600;
+	    color: #4b4e53;
+	}
+	
+
+	/*paging*/
+	.blog-pag {
+		text-align: center;
+	}
+
+	.blog-pag .pagination .active a, .blog-pag .pagination>.active>a:focus, .blog-pag .pagination>.active>a:hover, .blog-pag .pagination>.active>span, .blog-pag .pagination>.active>span:focus, .blog-pag .pagination>.active>span:hover {
+	    z-index: 2;
+	    color: #fff;
+	    cursor: default;
+	    background-color: #4b4e53;
+	    border-color: #337ab7;
+	}
+	.blog-pag .pagination>li>a, .blog-pag .pagination>li>span {
+	    color: #7e8082;
+	    margin-right: 7px;
+	    padding: 8px 14px;
+	    border: none;
+	    border-radius: 0;
+	}
+	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	    z-index: 2;
+	    color: #fff;
+	    cursor: default;
+	    background-color: #337ab7;
+	    border-color: #337ab7;
+	}
+	.pagination>li>a, .pagination>li>span {
+	    position: relative;
+	    float: left;
+	    padding: 6px 12px;
+	    margin-left: -1px;
+	    line-height: 1.42857143;
+	    color: #337ab7;
+	    text-decoration: none;
+	    background-color: #fff;
+	    border: 1px solid #ddd;
+	}
+	a {
+	    color: #4b4e53;
+	    transition: all .3s ease 0s;
+	}
+	.pagination {
+	    padding-left: 0;
+	    margin-top: 1rem;
+	    display: inline-block;
+	}
+	.pagination>li {
+	    display: inline;
+	}
+
+	.news-post .news-post-title {
+		margin-bottom: 30px;
+		overflow: hidden;
+		text-align: center;
+	}
+	.news-listing .media-heading{font-weight: 500; font-size: 16px; text-transform: capitalize}

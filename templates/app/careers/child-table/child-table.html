@@ -1,0 +1,54 @@
+<div class="job-details-block">
+    <div class="row">
+        <div class="col-sm-8 job-summary">
+            <div class="col-sm-12 p-n">
+                <h3>{{job.title}} <span ng-class="{'part-time': job.type == 'Part-Time', 'full-time': job.type == 'Full Time', 'temporary': job.type == 'Temporary'}">{{job.type}}</span></h3>
+            </div>
+            <div class="col-sm-12 p-n">
+                <div class="company-info">
+                    <div class="col-sm-4 company-logo">
+                        <img src="assets/logo-company.png" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <h4>Company Name</h4>
+                        <div class="col-sm-12 job-basic-info">
+                            <ul>
+                                <li>
+                                    <span>Profession:</span> {{job.profession}}
+                                </li>
+                                <li>
+                                    <span>Work Permit:</span> any
+                                </li>
+                                <li>
+                                    <span>Status:</span> {{job.status}}
+                                </li>
+                                <li>
+                                    <span>Referral Fee:</span> {{job.referralFee}}
+                                </li>
+                                <li>
+                                    <span>Duration:</span> {{ job.duration }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 career-links"></div>
+                <div class="col-sm-12 job-description">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 job-overview">
+            <ul>
+                <li><i class="fa fa-calendar"></i> <div><strong>Date Posted</strong>{{ job.postedDate | date : 'dd MMM yyyy'}}</div></li>
+                <li><i class="fa fa-user"></i> <div><strong>Posted by</strong>{{job.postedBy}}</div></li>
+                <li><i class="fa fa-map-marker"></i> <div><strong>Location</strong>{{job.location.state + ", " + job.location.country}}</div></li>
+                <li><i class="fa fa-money"></i><div><strong>Salary</strong>{{job.salary.amount + " " + job.salary.currency + " " + job.salary.type}}</div></li>
+                <li><i class="fa fa-users" aria-hidden="true"></i> <div><strong>Applicants</strong>{{ job.applicantsCount }}</div></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 career-buttons"></div>
+    </div>
+</div>

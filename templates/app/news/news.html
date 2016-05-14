@@ -1,0 +1,25 @@
+<div class="news-page sub-page">
+	<div class="box-container">
+		<div class="sub-page-header no-description-header">
+			<div class="container">
+				<h2>News</h2>
+			</div>
+		</div> <!-- end jumbotron -->
+		<div class="container news-listing">
+			<div class="row">
+				<div id="left-content" class="col-sm-12 col-md-9">
+
+					<ng-include src="'templates/app/news/news-page.html'" scope="" onload=""></ng-include>
+
+				</div><!-- end #left-content -->
+
+
+				<div id="right-content" class="col-sm-12 col-md-3">
+
+					<ng-include src="'templates/app/news/news-widget-archive.html'" scope="" onload=""></ng-include>
+
+				</div> <!-- end #right-content -->
+			</div><!-- end .row -->
+		</div><!-- end .container -->
+	</div>
+</div><!-- end .news-page -->

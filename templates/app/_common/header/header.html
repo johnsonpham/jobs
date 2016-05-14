@@ -1,0 +1,43 @@
+<header id="header" ng-controller="HeaderCtrl as header">
+    <div class="top-line">
+        <div class="top-line-container"> <a class="btn-logout" ng-if="!app.isAuth" ui-sref="auth.login">Login</a> <a class="btn-logout" ng-if="app.isAuth" ui-sref="auth.logout">Logout {{app.user.fullName}}</a> </div>
+    </div>
+    <div class="header">
+        <div class="header-content">
+            <div class="col-xs-4 col-md-3">
+                <div class="logo-block">
+                    <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-9">
+                <div id='cssmenu'>
+                    <ul>
+                        <li> <a href ui-sref="app.home">Home</a> </li>
+                        <li class='has-sub'> <a href="">Contacts</a>
+                            <ul>
+                                <li class="sub-item"> <a ui-sref="app.uploadContacts">Upload</a> </li>
+                                <li class="sub-item"> <a ui-sref="app.manageContacts">Manager</a> </li>
+                            </ul>
+                        </li>
+                        <li> <a href ui-sref="app.careers">Careers</a> </li>
+                        <li class='has-sub'> <a href="">Profile</a>
+                            <ul>
+                                <li><a class="fancybox.ajax" fancybox href="/templates/app/edit-profile/edit-profile.html"> Edit </a> </li>
+                                <li> <a class="sub-link" href="">Manage Contacts</a> </li>
+                                <li> <a class="sub-link" href="">Delete Account</a> </li>
+                            </ul>
+                        </li>
+                        <li> <a ui-sref="app.siteMap">Quick Links</a> </li>
+                        <li> <a ui-sref="app.aboutus">About Us</a> </li>
+                        <li> <a ui-sref="app.whysoftnet">Why Softnet ?</a> </li>
+                        <li> <a ui-sref="app.contactus">Contact Us</a></li>
+                        <li> <a ui-sref="app.help" href>Help</a> </li>
+                        <!--<li class="menu-item">-->
+                            <!--<sharethis share-url="http://softnet.elasticbeanstalk.com/" button-type="large"></sharethis>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,31 @@
+<div class="modal fade" id="forgotPassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-title"><h2>Forgot Password<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+            <div class="modal-body">
+                <form novalidate name="forgotPassForm" ng-submit="forgotPassModal.requestForgotPass()">
+                    <div class="logo-block">
+                        <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+                    </div>
+                    <div ng-show="!forgotPassModal.success.show">
+                        <div class="form-group" ng-class="{
+                                'has-error': forgotPassForm.$submitted && 
+                                    (
+                                        forgotPassForm.email.$error.required ||
+                                        forgotPassForm.email.$error.email || 
+                                        forgotPassModal.error.show
+                                    )
+                                ,
+                                'has-success': forgotPassForm.$submitted && forgotPassForm.email.$valid && !forgotPassModal.error
+                                }">
+                            <input type="email" name="email" class="form-control" placeholder="Please enter your email" id="email" autofocus="" ng-model="forgotPassModal.email" ng-disabled="forgotPassModal.loading"
+                                required> <span class="error-message" ng-show="forgotPassForm.$submitted && forgotPassForm.email.$error.required">Please enter your Email address.</span> <span class="error-message" ng-show="forgotPassForm.$submitted && forgotPassForm.email.$error.email">Invalid Email address.</span>                            <span class="error-message" ng-show="forgotPassForm.$submitted && forgotPassModal.error.show">{{forgotPassModal.error.message}}</span> </div>
+                        <div class="form-group"> <button type="submit" class="btn btn-block btn-sm btn-primary">Reset</button> </div>
+                    </div>
+                    <div class="success-message" ng-show="forgotPassModal.success.show">
+                        <h5 class="text-info">{{forgotPassModal.success.message}}</h5> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

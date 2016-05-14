@@ -1,0 +1,600 @@
+/* -- general -- */
+.btn{font-weight: 300; font-size: 14px;}
+.btn:visited{color: #fff}
+.btn:hover{background-color: #959494}
+.btn.btn-info.focus, .btn.btn-info:focus, .btn.btn-info:hover{
+    background-color: #31b0d5;
+}
+.btn-primary{
+    background-color: #53cbf1;
+    border-color: #53cbf1;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    background-color: #313131;
+    border-color: #313131;
+}
+.p-n{
+    padding: 0;}
+.col-checkbox{width: 25px}
+.col-view-details{width: 50px}
+.col-small{width: 60px}
+.col-cd{width: 120px;}
+.text-clip {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    vertical-align: middle;
+}
+/* -- re-style for header and footer -- */
+#header{min-height: inherit}
+#header .top-line{background: #53cbf1}
+#header .header .header-menu{padding-top: 0}
+#header .header .heafder-content{padding: 0}
+.footer{background: #363636}
+.logo-block .logo{width: auto; height: auto; padding-top: 5px;}
+.input-sm{
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.box-container{
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    border-top: 2px solid #13b2dc;
+    margin: 20px auto;
+    padding: 0 !important;
+}
+.title-box-container{
+    width: 100%;
+    padding-bottom: 10px;
+}
+.title-box-container h2{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+/* --- modal popup --- */
+.sofnet-modal .modal-dialog{
+    min-height: inherit;
+    background-color: #fff;
+    border-top: 2px solid #0fb4e7;
+}
+.sofnet-modal .modal-content{
+    padding: 20px 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+}
+.modal-title{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    background-color: #f4fcff;
+    border-bottom: 1px solid #eceeef;
+}
+.modal-title h2{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 10px;
+}
+.add-comments .sofnet-form{background-color: #fff}
+.sofnet-form .form-group{
+    display: inline-block;
+    width: 100%; padding: 5px 0 0;
+    margin: 0;}
+.sofnet-form label{text-transform: capitalize}
+.add-comments .sofnet-form .form-group label, .edit-accordion .acc_content .sofnet-form .form-group label{font-weight: 300; text-transform: capitalize}
+.sofnet-modal .modal-content button{min-width: 80px;}
+.modal-footer{padding: 10px 15px;
+    display: inline-block;
+    width: 100%;}
+.modal-footer button{min-width: 80px;}
+.paging-control-bars{}
+.paging-control-bars .col-xs-6{  padding: 0;}
+.modal-body .box-container{border: 0; padding: 0 !important;  margin: 0 !important;}
+.modal-body .dataTables_length{  padding: 0;}
+.modal-body .dataTables_wrapper .col-md-12{padding: 0}
+.modal-body .dataTables_wrapper .col-md-6{padding: 0}
+.sub-page{padding: 0}
+.sub-page-header{
+    padding: 20px 0 10px 0;
+    width: 100%;
+    clear: both;
+    display: inline-block;
+    background-color: #eceeef;
+}
+.no-description-header{padding: 40px 0 15px 0}
+.sub-page-header .container{padding: 0;}
+.sub-page-header h2{font-size: 25px; font-weight: 500; text-transform: uppercase}
+.sub-page-header p{font-size: 16px; color: #555; line-height: 22px;}
+.sub-page-content{padding: 50px 0}
+.sub-page .box-container{background-color: #fafafa; margin: 0;
+    padding: 0;
+    border: 0;
+}
+.sub-page .box-container h3, .sub-page .box-container h4{font-size: 18px; font-weight: 500}
+.footer-link{padding-bottom: 10px;}
+
+/* -- menu --- */
+#cssmenu {
+    position: relative;
+    height: 44px;
+    width: auto;
+}
+#cssmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+#cssmenu > ul {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 500;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#cssmenu.align-right > ul > li {
+    float: right;
+}
+#cssmenu.align-center ul {
+    text-align: center;
+}
+#cssmenu.align-center ul ul {
+    text-align: left;
+}
+#cssmenu > ul > li {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+#cssmenu > ul > #menu-button {
+    display: none;
+}
+#cssmenu ul li a {
+    display: block;
+    text-decoration: none;
+}
+#cssmenu > ul > li > a {
+    font-size: 16px;
+    padding: 15px 10px;
+    font-weight: 300;
+    color: #fff;
+    text-transform: capitalize;
+    -webkit-transition: color 0.25s ease-out;
+    -moz-transition: color 0.25s ease-out;
+    -ms-transition: color 0.25s ease-out;
+    -o-transition: color 0.25s ease-out;
+    transition: color 0.25s ease-out;
+}
+#cssmenu > ul > li.has-sub > a {
+    padding-right: 32px;
+}
+#cssmenu > ul > li:hover > a {
+    color: #ffffff;
+}
+#cssmenu li.has-sub::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+#cssmenu > ul > li.has-sub::after {
+    right: 10px;
+    top: 20px;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+}
+#cssmenu > ul > li:hover::after {
+    border-top-color: #53cbf1;
+}
+#indicatorContainer {
+    position: absolute;
+    height: 12px;
+    width: 100%;
+    bottom: 0px;
+    overflow: hidden;
+    z-index: -1;
+    display: none;
+}
+#pIndicator {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    border: 12px solid transparent;
+    border-top-color: #53cbf1;
+    z-index: -2;
+    -webkit-transition: left .25s ease;
+    -moz-transition: left .25s ease;
+    -ms-transition: left .25s ease;
+    -o-transition: left .25s ease;
+    transition: left .25s ease;
+}
+#cIndicator {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    border: 12px solid transparent;
+    border-top-color: #53cbf1;
+    top: -12px;
+    right: 100%;
+    z-index: -2;
+}
+#cssmenu ul ul {
+    position: absolute;
+    left: -9999px;
+    top: 70px;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease, top .25s ease;
+    -moz-transition: opacity .3s ease, top .25s ease;
+    -ms-transition: opacity .3s ease, top .25s ease;
+    -o-transition: opacity .3s ease, top .25s ease;
+    transition: opacity .3s ease, top .25s ease;
+    min-width: 200px;
+    z-index: 1000;
+}
+#cssmenu ul ul ul {
+    top: 37px;
+    padding-left: 5px;
+}
+#cssmenu ul ul li {
+    position: relative;
+}
+#cssmenu > ul > li:hover > ul {
+    left: auto;
+    top: 44px;
+    opacity: 1;
+}
+#cssmenu.align-right > ul > li:hover > ul {
+    left: auto;
+    right: 0;
+    opacity: 1;
+}
+#cssmenu ul ul li:hover > ul {
+    left: 170px;
+    top: 0;
+    opacity: 1;
+}
+#cssmenu.align-right ul ul li:hover > ul {
+    left: auto;
+    right: 170px;
+    top: 0;
+    opacity: 1;
+    padding-right: 5px;
+}
+#cssmenu ul ul li a {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background: #53cbf1;
+    -webkit-transition: all .35s ease;
+    -moz-transition: all .35s ease;
+    -ms-transition: all .35s ease;
+    -o-transition: all .35s ease;
+    transition: all .35s ease;
+    font-weight: 300;
+}
+#cssmenu.align-right ul ul li a {
+    text-align: right;
+}
+#cssmenu ul ul li:hover > a {
+    background: #38b8e0;
+    color: #fff;
+}
+#cssmenu ul ul li:last-child > a,
+#cssmenu ul ul li.last > a {
+    border-bottom: 0;
+}
+#cssmenu > ul > li > ul::after {
+    content: '';
+    border: 6px solid transparent;
+    width: 0;
+    height: 0;
+    border-bottom-color: #53cbf1;
+    position: absolute;
+    top: -12px;
+    left: 30px;
+}
+#cssmenu.align-right > ul > li > ul::after {
+    left: auto;
+    right: 30px;
+}
+#cssmenu ul ul li.has-sub::after {
+    border: 4px solid transparent;
+    border-left-color: #9ea2a5;
+    right: 10px;
+    top: 12px;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transition: -webkit-transform 0.2s ease, right 0.2s ease;
+}
+#cssmenu.align-right ul ul li.has-sub::after {
+    border-left-color: transparent;
+    border-right-color: #9ea2a5;
+    right: auto;
+    left: 10px;
+}
+#cssmenu ul ul li.has-sub:hover::after {
+    border-left-color: #ffffff;
+    right: -5px;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+#cssmenu.align-right ul ul li.has-sub:hover::after {
+    border-right-color: #ffffff;
+    border-left-color: transparent;
+    left: -5px;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+    #cssmenu {
+        width: auto;
+    }
+    #cssmenu.align-center ul {
+        text-align: left;
+    }
+    #cssmenu.align-right > ul > li {
+        float: none;
+    }
+    #cssmenu ul {
+        width: auto;
+    }
+    #cssmenu .submenuArrow,
+    #cssmenu #indicatorContainer {
+        display: none;
+    }
+    #cssmenu > ul {
+        height: auto;
+        display: block;
+    }
+    #cssmenu > ul > li {
+        float: none;
+    }
+    #cssmenu li,
+    #cssmenu > ul > li {
+        display: none;
+    }
+    #cssmenu ul ul,
+    #cssmenu ul ul ul,
+    #cssmenu ul > li:hover > ul,
+    #cssmenu ul ul > li:hover > ul,
+    #cssmenu.align-right ul ul,
+    #cssmenu.align-right ul ul ul,
+    #cssmenu.align-right ul > li:hover > ul,
+    #cssmenu.align-right ul ul > li:hover > ul {
+        position: relative;
+        left: auto;
+        top: auto;
+        opacity: 1;
+        padding-left: 0;
+        padding-right: 0;
+        right: auto;
+    }
+    #cssmenu ul .has-sub::after {
+        display: none;
+    }
+    #cssmenu ul li a {
+        padding: 12px 20px;
+    }
+    #cssmenu ul ul li a {
+        border: 0;
+        background: none;
+        width: auto;
+        padding: 8px 35px;
+    }
+    #cssmenu.align-right ul ul li a {
+        text-align: left;
+    }
+    #cssmenu ul ul li:hover > a {
+        background: none;
+        color: #8c9195;
+    }
+    #cssmenu ul ul ul a {
+        padding: 8px 50px;
+    }
+    #cssmenu ul ul ul ul a {
+        padding: 8px 65px;
+    }
+    #cssmenu ul ul ul ul ul a {
+        padding: 8px 80px;
+    }
+    #cssmenu ul ul ul ul ul ul a {
+        padding: 8px 95px;
+    }
+    #cssmenu > ul > #menu-button {
+        display: block;
+        cursor: pointer;
+    }
+    #cssmenu #menu-button > a {
+        padding: 14px 20px;
+    }
+    #cssmenu ul.open li,
+    #cssmenu > ul.open > li {
+        display: block;
+    }
+    #cssmenu > ul.open > li#menu-button > a {
+        color: #fff;
+        border-bottom: 1px solid rgba(150, 150, 150, 0.1);
+    }
+    #cssmenu ul ul::after {
+        display: none;
+    }
+    #cssmenu #menu-button::after {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 22px;
+        border-top: 2px solid #7a8189;
+        border-bottom: 2px solid #7a8189;
+        right: 20px;
+        top: 15px;
+    }
+    #cssmenu #menu-button::before {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 22px;
+        border-top: 2px solid #7a8189;
+        right: 20px;
+        top: 25px;
+    }
+    #cssmenu ul.open #menu-button::after,
+    #cssmenu ul.open #menu-button::before {
+        border-color: #fff;
+    }
+}
+/* -- animation for service icon -- */
+.hi-icon-wrap {
+    text-align: center;
+    margin: 0 auto;
+}
+.hi-icon {
+    display: inline-block;
+    font-size: 0px;
+    cursor: pointer;
+    margin: 15px 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #555;
+}
+
+.hi-icon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.hi-icon:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+.hi-icon-effect-3 .hi-icon {
+    box-shadow: 0 0 0 1px #555;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.hi-icon-effect-3 .hi-icon:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    z-index: -1;
+    background: url(../img/ic_services_green.png) #555 left top no-repeat;
+    background-size: 40px;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.3s;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+
+/* Effect 3b */
+.hi-icon-effect-3b .hi-icon {
+    background: url(../img/ic_services.png) left top no-repeat;
+    background-size: 40px;
+    color: #555;
+}
+
+.hi-icon-effect-3b:hover .hi-icon {
+    color: #f06060;
+}
+
+.hi-icon-effect-3b .hi-icon:after {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0;
+}
+
+.hi-icon-effect-3b:hover .hi-icon:after {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+.hi-icon-effect-3 .hi-icon.contact-number:after,
+.hi-icon-effect-3b .hi-icon.contact-number{
+    background-position: center 30px;
+}
+.hi-icon-effect-3 .hi-icon.group-number:after,
+.hi-icon-effect-3b .hi-icon.group-number{
+    background-position: center -47px;
+}
+.hi-icon-effect-3 .hi-icon.group-member-number:after,
+.hi-icon-effect-3b .hi-icon.group-member-number{
+    background-position: center -118px;
+}
+
+
+/* -- Contacts --- */
+.status-block{
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.status-item{
+
+}
+.status-item strong{font-size: 25px; font-weight: 300}
+.status-item p{font-size: 18px; text-transform: capitalize}
+.connect-by-social{}
+.connection-status li{font-size: 16px;}
+.connection-status a{font-size: 25px;font-weight: 300}
+
+    

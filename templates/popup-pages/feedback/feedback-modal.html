@@ -1,0 +1,14 @@
+<div id="modal-feedback" class="modal fade sofnet-modal" ng-controller="FeedbackCtrl as fbCtrl">
+    <div class="modal-dialog" role="document">
+        <div class="modal-title">
+        	<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        	<h2>Isoftnet Feedback</h2>
+        </div>
+        <div class="modal-content">      
+        	
+    		<ng-include src="'templates/popup-pages/feedback/feedback-content/feedback-content.html'" include-replace></ng-include>	
+        			    	
+        </div>
+        
+    </div>  <!-- end .modal-dialog -->
+</div><!-- end #modal-feedback -->

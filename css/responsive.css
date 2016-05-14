@@ -1,0 +1,78 @@
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+    body{
+        padding-top: 34px;}
+    #header .header .header-content{min-height: 44px;}
+    #header .header .logo-block .logo{padding-top: 10px}
+    #cssmenu{
+        width: 100%;
+    }
+    #cssmenu #menu-button{cursor: pointer}
+    #cssmenu #menu-button::after{height: 7px}
+    #cssmenu > ul{top: 44px; background-color: #000;
+        width: 100%;
+    }
+    #cssmenu > ul > li{border-top: 1px solid #333}
+    #cssmenu > ul > li:hover{background-color: #333}
+    .container{padding: 0 15px;}
+    .message-box{width: 90%; padding-left: 5%; padding-right: 5%;}
+    .message-box .subtitle{font-size: 16px;}
+    .message-box .title{font-size: 20px; font-weight: 500;}
+    .section.slider .slogan{font-size: 16px; padding-left: 15px;
+        padding-right: 15px;}
+    .section.feedbacks{padding: 30px 20px; min-height: 400px;}
+    .section.feedbacks .title-block .title{font-size: 20px; text-transform: uppercase}
+    .section.feedbacks .feedback-container .feedback{font-size: 16px;}
+    .section.feedbacks .feedback-container .left-quote, .section.feedbacks .feedback-container .right-quote{font-size: 20px;}
+    .section.feedbacks .feedback-container .feedback{padding: 10px 15px}
+
+    .section.experience .experience-box .title{font-size: 20px; font-weight: 300; text-transform: uppercase;}
+    .section.experience .experience-box .description{font-size: 18px;}
+
+    .sub-page .box-container{padding-top: 0 !important;}
+    .sub-page-header{padding: 20px 15px 10px 15px; margin-bottom: 20px}
+    .sub-page-header h2{font-size: 18px;}
+    .services-container{padding: 15px}
+}
+@media only screen and (min-width: 720px) and (max-width: 999px){
+    body{
+        padding-top: 34px;
+    }
+    .container{max-width: 100%}
+    #header .top-line .top-line-container{
+        max-width: 100%;
+    }
+    #header .header{padding: 0}
+    #header .header .header-content{min-height: 44px;}
+    #header .header .logo-block .logo{padding-top: 10px}
+    #cssmenu{
+        width: 100%;
+    }
+    #cssmenu #menu-button{cursor: pointer}
+    #cssmenu #menu-button::after{height: 7px}
+    #cssmenu > ul{top: 44px; background-color: #000;
+        width: 100%;
+    }
+    #cssmenu > ul > li{border-top: 1px solid #333}
+    #cssmenu > ul > li:hover{background-color: #333}
+    .container{padding: 0 15px;}
+    .message-box{width: 90%; padding-left: 5%; padding-right: 5%;}
+    .message-box .subtitle{font-size: 16px;}
+    .message-box .title{font-size: 20px; font-weight: 500;}
+    .section.slider .slogan{font-size: 16px; padding-left: 15px;
+        padding-right: 15px;}
+    .section.feedbacks{padding: 30px 20px; min-height: 400px;}
+    .section.feedbacks .title-block .title{font-size: 20px; text-transform: uppercase}
+    .section.feedbacks .feedback-container .feedback{font-size: 16px;}
+    .section.feedbacks .feedback-container .left-quote, .section.feedbacks .feedback-container .right-quote{font-size: 20px;}
+    .section.feedbacks .feedback-container .feedback{padding: 10px 15px}
+
+    .section.experience .experience-box .title{font-size: 20px; font-weight: 300; text-transform: uppercase;}
+    .section.experience .experience-box .description{font-size: 18px;}
+
+    .sub-page .box-container{padding-top: 0 !important;}
+    .sub-page-header{padding: 20px 15px 10px 15px; margin-bottom: 20px}
+    .sub-page-header h2{font-size: 18px;}
+    .services-container{padding: 15px}
+    .footer button.btn-subscribe{width: 31%;}
+    .footer input.subscribe-email{width: 69%}
+}

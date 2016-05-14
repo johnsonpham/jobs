@@ -1,0 +1,94 @@
+<!-- page help -->
+<section class="sub-page section help">
+    <div class="box-container">
+        <div class="sub-page-header">
+            <div class="container">
+                <h2>Help</h2>
+                <p class="lead">Keep reading this page to figure out how we got started and who is behind it!</p>
+            </div>
+        </div>
+        <div class="container sub-page-content">
+            <!-- Nav left -->
+            <aside class="section-sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="nav_menu">
+                    <div class="title">
+                        <h5>Common Questions</h5>
+                    </div>
+
+                    <ul style="list-style: none; margin: 0px; padding: 0px;">
+                        <li>
+                            <a ui-sref="app.aboutus" href>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;&nbsp;&nbsp;
+                                About Us</a>
+                        </li>
+                        <li>
+                            <a ui-sref="app.help" href>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;&nbsp;&nbsp;
+                                Terms of Service</a>
+                        </li>
+                        <li>
+                            <a ui-sref="app.contactus" href>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;&nbsp;&nbsp;
+                                Contact Us</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </aside>
+            <!-- End Nav left -->
+
+            <!-- section content -->
+            <div class="section-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="row" style="margin: 0px; padding: 0px;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3>FREQUENTLY ASKED QUESTIONS</h3>
+                        <br />
+                        <p>Website uses cookies to monitor browsing preferences. If you do allow cookies to be used, the following personal information.Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</p>
+                        <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered.</p> <br />
+                    </div>
+                </div>
+
+                <div class="row" style="margin: 0px; padding: 0px;">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <ol type="a" style="margin: 0px; padding-left: 15px;">
+                            <li> The rankings are checked on a daily basis.</li>
+                            <li> Yes. Each keyword position can be checked</li>
+                            <li> There are a few factors why the position</li>
+                            <li> If you see rises and drops in Google</li>
+                            <li> Because they’re testing new algorithms</li>
+                            <li> All positioning data will be kept indefinitely.</li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <ol type="a" start="7" style="margin: 0px; padding-left: 15px;">
+                            <li> The rankings are checked on a daily basis.</li>
+                            <li> Yes. Each keyword position can be checked</li>
+                            <li> There are a few factors why the position</li>
+                            <li> If you see rises and drops in Google</li>
+                            <li> Because they’re testing new algorithms</li>
+                            <li> All positioning data will be kept indefinitely.</li>
+                        </ol>
+                    </div>
+                </div>
+                <hr />
+                <div class="row" style="margin: 0px; padding: 0px;">
+                    <div class="col-xs-12 title-box-container" ng-repeat="vl in help.helpfaqs">
+                        <a href ng-model="collapsed" ng-click="collapsed=!collapsed">
+
+                            <i ng-hide="collapsed" class="fa fa-plus"></i>
+                            <i ng-show="collapsed" class="fa fa-minus ng-hide"></i>
+                            &nbsp;&nbsp;&nbsp;
+                            <strong>{{vl.title}}</strong> </a>
+
+                        <div ng-show="collapsed">{{vl.description}}</div>
+                    </div>
+                </div>
+
+            </div>  <!-- end section-content help -->
+        </div>
+    </div>
+</section>
+<!-- end page help -->

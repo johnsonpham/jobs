@@ -1,0 +1,14 @@
+<div class="modal fade sofnet-modal" id="starRatingModal" ng-controller="RatingStarCtrl as Rating">
+    <div class="modal-dialog" role="document">
+        <div class="modal-title"><h2>Rating<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button></h2></div>
+        <div class="modal-content">
+            <div class="modal-body">
+                <ng-include src="'templates/app/careers/rating/rating-form/rating.html'" include-replace></ng-include>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" ng-click="Rating.save()" class="btn btn-info" >Save</button>
+	        <button type="button" ng-click="close(false)" class="btn" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</div>
