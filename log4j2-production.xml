@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="Test">
+    <Properties>
+        <Property name="Directory">${sys:user.home}/logs</Property>
+        <Property name="controller_log">controller.log</Property>
+        <Property name="application_log">application.log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="Controller" 
+            fileName="${Directory}/${controller_log}" 
+            filePattern="${Directory}/${date:yyyy-MM}/test-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %logger{36} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        <RollingFile name="Default" 
+            fileName="${Directory}/${application_log}" 
+            filePattern="${Directory}/${date:yyyy-MM}/test-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %logger{36} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+    	<Logger name="org.thymeleaf" level="ERROR"/>
+    	<Logger name="org.hibernate" level="error"/>
+    	<Logger name="org.springframework" level="info"/>
+    	
+	    <Logger name="DEFAULT" level="debug">
+	      <AppenderRef ref="Default"/>
+	    </Logger>
+	    <Logger name="CONTROLLER" level="debug">
+	      <AppenderRef ref="Controller"/>
+	    </Logger>
+	    <Logger name="SECURITY" level="debug">
+	      <AppenderRef ref="Default"/>
+	    </Logger>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <!-- <AppenderRef ref="Default"/> -->
+        </Root>
+    </Loggers>
+</Configuration>

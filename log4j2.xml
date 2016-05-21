@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="Test">
+    <Properties>
+        <Property name="Directory">${sys:user.home}/logs</Property>
+        <Property name="controller_log">controller.log</Property>
+        <Property name="service_log">service.log</Property>
+        <Property name="application_log">application.log</Property>
+        <Property name="dao_log">dao.log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="Controller" 
+            fileName="${Directory}/${controller_log}" 
+            filePattern="${Directory}/${date:yyyy-MM}/controller-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %logger{36} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        <RollingFile name="Service" 
+            fileName="${Directory}/${service_log}" 
+            filePattern="${Directory}/${date:yyyy-MM}/service-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %logger{36} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        <RollingFile name="Dao" 
+            fileName="${Directory}/${dao_log}" 
+            filePattern="${Directory}/${date:yyyy-MM}/dao-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %logger{36} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        <RollingFile name="Default" 
+            fileName="${Directory}/${application_log}" 
+            filePattern="${Directory}/${date:yyyy-MM}/default-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %logger{36} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+    
+    	<Logger name="org.thymeleaf" level="ERROR"/>
+    	<Logger name="org.hibernate" level="ERROR"/>
+    	<Logger name="org.springframework" level="ERROR"/>
+	     <logger name="org.springframework.beans" level="ERROR" />
+	    <Logger name="DEFAULT" level="DEBUG">
+	      <AppenderRef ref="Default"/>
+	    </Logger>
+	    <Logger name="CONTROLLER" level="DEBUG">
+	      <AppenderRef ref="Controller"/>
+	    </Logger>
+	    <Logger name="SECURITY" level="DEBUG">
+	      <AppenderRef ref="Default"/>
+	    </Logger>
+	    <Logger name="SERVICE" level="DEBUG">
+	      <AppenderRef ref="Service"/>
+	    </Logger>
+	    <Logger name="DAO" level="DEBUG">
+	      <AppenderRef ref="Dao"/>
+	    </Logger>
+        <Root level="DEBUG">
+            <AppenderRef ref="Console"/>
+            <!-- <AppenderRef ref="Default"/> -->
+        </Root>
+    </Loggers>
+</Configuration>

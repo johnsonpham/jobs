@@ -1,0 +1,72 @@
+<form class="sofnet-form" novalidate name="forms.contact" ng-submit="contactEditModal.save()">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="career-edit-form">
+                <div class="form-group" ng-class="{
+                            'has-error': forms.contact.$submitted && 
+                                (
+                                    forms.contact.firstName.$error.required ||
+                                    forms.contact.error
+                                )
+                            ,
+                            'has-success': forms.contact.$submitted && forms.contact.fi.$valid
+                            }">
+                    <label class="col-md-3">first name</label>
+                    <div class="col-md-9">
+                        <input type="text" name="firstName" ng-model="contactEditModal.contact.firstName" class="form-control" placeholder="" id="firstName" required />
+                        <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.firstName.$error.required">Please enter first name.</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{
+                            'has-error': forms.contact.$submitted && 
+                                (
+                                    forms.contact.lastName.$error.required ||
+                                    forms.contact.error
+                                )
+                            ,
+                            'has-success': forms.contact.$submitted && forms.contact.fi.$valid
+                            }">
+                    <label class="col-md-3">last name</label>
+                    <div class="col-md-9">
+                        <input type="text" name="lastName" ng-model="contactEditModal.contact.lastName" class="form-control" placeholder="" id="lastName" required />
+                        <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.lastName.$error.required">Please enter last name.</span>
+                    </div>
+                </div>
+                <div class="row form-group" ng-class="{
+                            'has-error': forms.contact.$submitted && 
+                                (
+                                    forms.contact.email.$error.required ||
+                                    forms.contact.email.$error.email || 
+                                    forms.contact.error
+                                )
+                            ,
+                            'has-success': forms.contact.$submitted && forms.contact.email.$valid
+                            }">
+                    <div class="col-md-3">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="email" name="email" ng-model="contactEditModal.contact.email" class="form-control" placeholder="" id="email" required> 
+                        <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.email.$error.required">Please enter your Email address.</span>
+                        <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.email.$error.email">Invalid Email address.</span>
+                    </div>
+                </div>
+                <div class="row form-group" ng-class="{
+                            'has-error': forms.contact.$submitted && forms.contact.phone.$error.pattern
+                        }">
+                    <div class="col-md-3">
+                        <label for="phone">Phone number</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" name="phoneNumber" class="form-control" id="phone" ng-model="contactEditModal.contact.phoneNumber" ng-pattern="/^\d{3}\d{3}\d{4}$/"> 
+                        <span class="error-message" ng-show="forms.contact.$submitted && forms.contact.phone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-info">Save</button>
+        <button type="button" class="btn" ng-click="contactEditModal.closeModal(false)" data-dismiss="modal">Cancel</button>
+    </div>
+</form>

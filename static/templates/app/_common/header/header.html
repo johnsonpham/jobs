@@ -1,0 +1,42 @@
+<header id="header">
+    <div class="header">
+        <div class="header-content">
+            <div class="col-md-3">
+                <div class="logo-block">
+                    <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a> <button class="navbar-toggler btn-toggle hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#header-menu">
+						<i class="fa fa-bars"></i>
+					</button> </div>
+            </div>
+            <div class="col-md-9">
+                <div class="collapse navbar-toggleable-sm" id="header-menu">
+                    <ul class="header-menu">
+                        <li class="menu-item"> <a class="menu-link" href="">Home</a> </li>
+                        <li class="menu-item"> <a class="menu-link" href="">Contacts</a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a class="sub-link" href="">Upload</a> </li>
+                                <li class="sub-item"> <a class="sub-link" href="">Manager</a> </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item" ng-if="app.isAuth"> <a class="menu-link" href="">Profile</a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a class="sub-link fancybox.ajax" fancybox href="/templates/app/edit-profile/edit-profile.html">
+						 				Edit
+						 			</a> </li>
+                                <li class="sub-item"> <a class="sub-link" href="">Manage Contacts</a> </li>
+                                <li class="sub-item"> <a class="sub-link" href="">Delete Account</a> </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"> <a class="menu-link" href="">Quick Links</a> </li>
+                        <li class="menu-item"> <a fancybox class="menu-link fancybox.iframe" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1">About Us</a> </li>
+                        <li class="menu-item"> <a fancybox class="menu-link fancybox.iframe" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1">Why Softnet ?</a> </li>
+                        <li class="menu-item"> <a class="menu-link" href="">Contact Us</a> </li>
+                        <li class="menu-item"> <a class="menu-link" href="">Help</a> </li>
+                        <li class="menu-item">
+                            <sharethis share-url="http://softnet.elasticbeanstalk.com/" button-type="large"></sharethis>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

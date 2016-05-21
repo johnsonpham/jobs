@@ -1,0 +1,182 @@
+<div ng-controller="EditProfileCtrl as editProfile">
+    <div class="logo-block">
+        <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+    </div>
+    <!-- Accordion begin -->
+    <div id="editAccordion" class="edit-accordion" accordion>
+        <!-- Profile Details Section -->
+        <div class="accordion_in acc_active">
+            <div class="acc_head" ng-click="editProfile.cleanError()">Profile Details</div>
+            <div class="acc_content">
+                <form class="sofnet-form" novalidate name="forms.editProfile" ng-submit="editProfile.updateProfile(app.user)">
+                    <div class="row form-group" ng-show="editProfile.error.show">
+                        <div class="offset-md-4 col-md-8">
+                            <p class="alert alert-danger"> <button type="button" class="close" ng-click="editProfile.cleanError()">
+                                    <i class="fa fa-times"></i>
+                                </button> <strong><i class="fa fa-exclamation-triangle"></i></strong> {{editProfile.error.message}} </p>
+                        </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && 
+                                (
+                                    forms.editProfile.fullname.$error.required ||
+                                    editProfile.error
+                                )
+                            ,
+                            'has-success': forms.editProfile.$submitted && forms.editProfile.fullname.$valid
+                            }">
+                        <div class="col-md-4"> <label for="fullname">Full Name</label>
+                            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="" data-original-title="Please enter your Real Name, for people you know to recognize you. No Nicknames or Aliases."></i> </a>
+                        </div>
+                        <div class="col-md-8"> <input type="text" name="fullname" class="form-control" placeholder="" id="fullname" autofocus="" ng-model="app.user.fullName" ng-disabled="editProfile.loading" required> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.fullname.$error.required">Please enter Full Name.</span>                            </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && 
+                                (
+                                    forms.editProfile.email.$error.required ||
+                                    forms.editProfile.email.$error.email || 
+                                    forms.editProfile.error
+                                )
+                            ,
+                            'has-success': forms.editProfile.$submitted && forms.editProfile.email.$valid
+                            }">
+                        <div class="col-md-4"> <label for="email">Email</label> </div>
+                        <div class="col-md-8"> <input type="email" name="email" class="form-control" placeholder="" id="email" autofocus="" readonly="readonly" ng-model="app.user.email" ng-disabled="editProfile.loading" required> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.email.$error.required">Please enter your Email address.</span>                            <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.email.$error.email">Invalid Email address.</span> <span class="error-message" ng-show="forms.editProfile.$submitted && editProfile.error">{{editProfile.error}}</span>                            </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && forms.editProfile.workEmail.$error.email
+                            }">
+                        <div class="col-md-4"> <label for="workEmail">Email (work)</label>
+                            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="" data-original-title="Please enter your work email address."></i> </a>
+                        </div>
+                        <div class="col-md-8"> <input type="email" name="workEmail" class="form-control" placeholder="" id="workEmail" autofocus="" ng-model="app.user.workEmail" ng-disabled="editProfile.loading"> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.workEmail.$error.email">Invalid Email address.</span>                            </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && forms.editProfile.phone.$error.pattern
+                        }">
+                        <div class="col-md-4"> <label for="phone">Telephone (primary)</label>
+                            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="" data-original-title="Example:  8881234567"></i> </a>
+                        </div>
+                        <div class="col-md-8"> <input type="text" name="phone" class="form-control" placeholder="" id="phone" autofocus="" ng-model="app.user.telephone" ng-disabled="editProfile.loading" ng-pattern="/^\d{3}\d{3}\d{4}$/"> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.phone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span>                            </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && forms.editProfile.cellPhone.$error.pattern
+                        }">
+                        <div class="col-md-4"> <label for="cellPhone"> Telephone(cell)</label>
+                            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="" data-original-title="Example:  8881234567"></i> </a>
+                        </div>
+                        <div class="col-md-8"> <input type="text" name="cellPhone" class="form-control" placeholder="" id="cellPhone" autofocus="" ng-model="app.user.cellPhone" ng-disabled="editProfile.loading" ng-pattern="/^\d{3}\d{3}\d{4}$/"> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.cellPhone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span>                            </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && forms.editProfile.homePhone.$error.pattern
+                        }">
+                        <div class="col-md-4"> <label for="homePhone">Telephone (home)</label>
+                            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="" data-original-title="Example:  8881234567"></i> </a>
+                        </div>
+                        <div class="col-md-8"> <input type="text" name="homePhone" class="form-control" placeholder="" id="homePhone" autofocus="" ng-model="app.user.homePhone" ng-disabled="editProfile.loading" ng-pattern="/^\d{3}\d{3}\d{4}$/"> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.homePhone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span>                            </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editProfile.$submitted && forms.editProfile.workPhone.$error.pattern
+                        }">
+                        <div class="col-md-4"> <label for="workPhone">Telephone (work)</label>
+                            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="" data-original-title="Example:  8881234567"></i> </a>
+                        </div>
+                        <div class="col-md-8"> <input type="text" name="workPhone" class="form-control" placeholder="" id="workPhone" autofocus="" ng-model="app.user.workPhone" ng-disabled="editProfile.loading" ng-pattern="/^\d{3}\d{3}\d{4}$/"> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.workPhone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span>                            </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="offset-md-4 col-md-8"> <button type="submit" class="btn btn-sm btn-primary">Save</button> <button type="button" class="btn btn-sm btn-secondary" ng-click="closeFancyBox()">Cancel</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Password Reset Section -->
+        <div class="accordion_in">
+            <div class="acc_head" ng-click="editProfile.cleanError()">Password reset</div>
+            <div class="acc_content">
+                <form class="sofnet-form" novalidate name="forms.editPassword" ng-submit="editProfile.updatePassword()">
+                    <div class="row form-group" ng-show="editProfile.error.show">
+                        <div class="offset-md-4 col-md-8">
+                            <p class="alert alert-danger"> <button type="button" class="close" ng-click="editProfile.cleanError()">
+                                    <i class="fa fa-times"></i>
+                                </button> <strong><i class="fa fa-exclamation-triangle"></i></strong> {{editProfile.error.message}} </p>
+                        </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editPassword.$submitted && (
+                                forms.editPassword.password.$error.required ||
+                                forms.editPassword.password.$error.pattern ||
+                                forms.editPassword.password.$error.minlength || 
+                                forms.editPassword.password.$error.maxlength
+                            )
+                        }">
+                        <div class="col-md-4"> <label for="password">Current Password</label> </div>
+                        <div class="col-md-8"> <input type="password" name="password" class="form-control" placeholder="" id="password" autofocus="" ng-model="editProfile.password" ng-minlength="6" ng-maxlength="10" ng-disabled="editProfile.loading" ng-pattern="/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/"
+                                required> <span class="error-message" ng-show="forms.editPassword.$submitted && forms.editPassword.password.$error.required">Please enter password.</span> <span class="error-message" ng-show="forms.editPassword.$submitted && forms.editPassword.password.$error.pattern">Please use alphanumeric characters for password.</span>                            <span class="error-message" ng-show="forms.editPassword.$submitted && (
+                                    forms.editPassword.password.$error.minlength || 
+                                    forms.editPassword.password.$error.maxlength
+                                )">The password should be between 6 and 10 characters long.</span> </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editPassword.$submitted && (
+                                forms.editPassword.newpassword.$error.required ||
+                                forms.editPassword.newpassword.$error.pattern ||
+                                forms.editPassword.newpassword.$error.minlength || 
+                                forms.editPassword.newpassword.$error.maxlength
+                            )
+                        }">
+                        <div class="col-md-4"> <label for="newpassword">New Password</label> </div>
+                        <div class="col-md-8"> <input type="password" name="newpassword" class="form-control" placeholder="" id="newpassword" autofocus="" ng-model="editProfile.newpassword" ng-minlength="6" ng-maxlength="10" ng-pattern="/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/"
+                                ng-disabled="editProfile.loading" required> <span class="error-message" ng-show="forms.editPassword.$submitted && forms.editPassword.newpassword.$error.required">Please enter password.</span> <span class="error-message" ng-show="forms.editPassword.$submitted && forms.editPassword.newpassword.$error.pattern">Please use alphanumeric characters for password.</span>                            <span class="error-message" ng-show="forms.editPassword.$submitted && (
+                                forms.editPassword.newpassword.$error.minlength || 
+                                forms.editPassword.newpassword.$error.maxlength
+                            )">The password should be between 6 and 10 characters long.</span> </div>
+                    </div>
+                    <div class="row form-group" ng-class="{
+                            'has-error': forms.editPassword.$submitted && (
+                                forms.editPassword.newpassword2.$error.required ||
+                                (forms.editPassword.newpassword.$invalid && forms.editPassword.newpassword.$dirty) || 
+                                (forms.editPassword.newpassword2.$invalid && forms.editPassword.newpassword2.$dirty)
+                            )
+                        }">
+                        <div class="col-md-4"> <label for="retypePassword">Confirm New Password</label> </div>
+                        <div class="col-md-8"> <input type="password" name="newpassword2" class="form-control" placeholder="" id="retypePassword" autofocus="" ng-model="editProfile.retypePassword" ng-disabled="editProfile.loading" match="editProfile.newpassword" required>
+                            <span
+                                class="error-message" ng-show="forms.editPassword.$submitted && forms.editPassword.newpassword2.$error.required">Please enter password.</span> <span class="error-message" ng-show="forms.editPassword.$submitted && (
+                                    (forms.editPassword.newpassword.$invalid && forms.editPassword.newpassword.$dirty) || 
+                                    (forms.editPassword.newpassword2.$invalid && forms.editPassword.newpassword2.$dirty)
+                                )">Passwords doesn't match.</span> </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="offset-md-4 col-md-8"> <button type="submit" class="btn btn-sm btn-primary">Save</button> <button type="button" class="btn btn-sm btn-secondary" ng-click="closeFancyBox()">Cancel</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Notifications Section -->
+        <div class="accordion_in">
+            <div class="acc_head" ng-click="editProfile.cleanError()">Notifications</div>
+            <div class="acc_content">
+                <form class="sofnet-form" novalidate name="forms.editNotes" ng-submit="editProfile.updateNotificatons(app.user)">
+                    <div class="row form-group" ng-show="editProfile.error.show">
+                        <div class="offset-md-4 col-md-8">
+                            <p class="alert alert-danger"> <button type="button" class="close" ng-click="editProfile.cleanError()">
+                                    <i class="fa fa-times"></i>
+                                </button> <strong><i class="fa fa-exclamation-triangle"></i></strong> {{editProfile.error.message}} </p>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4"> <label for="sendSms" style="padding: 8px 0;">Send SMS</label> </div>
+                        <div class="col-md-8"> <input id="sendSms" bs-switch ng-model="app.user.notifications.sms" switch-off-color="danger" switch-size="small" switch-handle-width="40" type="checkbox"> </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4"> <label for="sendEmail" style="padding: 8px 0;">Send EMAIL</label> </div>
+                        <div class="col-md-8"> <input id="sendEmail" bs-switch ng-model="app.user.notifications.email" switch-handle-width="40" switch-off-color="danger" switch-size="small" type="checkbox"> </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="offset-md-4 col-md-8"> <button type="submit" class="btn btn-sm btn-primary">Save</button> <button type="button" class="btn btn-sm btn-secondary" ng-click="closeFancyBox()">Cancel</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

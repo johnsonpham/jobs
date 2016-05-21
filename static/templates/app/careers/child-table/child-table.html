@@ -1,0 +1,12 @@
+<table class="table table-sm child-table">
+    <tr>
+        <td colspan="8">
+            <h6>{{job.title}}</h6> </td>
+    </tr>
+    <tr>
+        <td colspan="2" width="15%">{{ job.postedDate | date : 'dd MMM yyyy HH:mm:ss'}}</td>
+        <td colspan="1" width="15%">Posted By: {{job.postedBy}}</td>
+        <td colspan="2" width="30%">{{job.location.state + ", " + job.location.country}}</td>
+        <td colspan="3" width="40%">asd</td>
+    </tr>
+</table>

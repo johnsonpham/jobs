@@ -1,0 +1,33 @@
+<form class="sofnet-form" novalidate name="form.signup" ng-submit="signupModal.register()">
+    <div class="logo-block">
+        <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+    </div>
+    <ul class="auth-tabs" ng-show="!signupModal.success.show">
+        <li class="tab-item"> <a class="tab-link" ng-class="{'active': signupModal.isActiveTab('tab1')}" ng-click="signupModal.activateTab('tab1');signupModal.resetForm();" href="">
+                Tab 1
+            </a> </li>
+        <li class="tab-item"> <a class="tab-link" ng-class="{'active': signupModal.isActiveTab('tab2')}" ng-click="signupModal.activateTab('tab2');signupModal.resetForm();" href="">
+                Tab 2
+            </a> </li>
+        <li class="tab-item"> <a class="tab-link" ng-class="{'active': signupModal.isActiveTab('tab3')}" ng-click="signupModal.activateTab('tab3');signupModal.resetForm();" href="">
+                Tab 3
+            </a> </li>
+    </ul>
+    <div class="tabs-content" ng-show="!signupModal.success.show">
+        <div class="tab-pane" ng-class="{'active': signupModal.isActiveTab('tab1')}" ng-if="signupModal.isActiveTab('tab1')">
+            <ng-include src="'templates/auth/signup-modal/signup-form/tabs/tab1.html'" include-replace></ng-include>
+        </div>
+        <div class="tab-pane" ng-class="{'active': signupModal.isActiveTab('tab2')}" ng-if="signupModal.isActiveTab('tab2')">
+            <ng-include src="'templates/auth/signup-modal/signup-form/tabs/tab2.html'" include-replace></ng-include>
+        </div>
+        <div class="tab-pane" ng-class="{'active': signupModal.isActiveTab('tab3')}" ng-if="signupModal.isActiveTab('tab3')">
+            <ng-include src="'templates/auth/signup-modal/signup-form/tabs/tab3.html'" include-replace></ng-include>
+        </div>
+    </div>
+    <div class="form-group" ng-show="!signupModal.success.show" ng-class="{'has-error': form.signup.$valid && (!signupModal.policyAggree || !signupModal.policyRead)}"> <label>
+            <input class="checkbox" ng-disabled="!signupModal.policyRead" ng-model="signupModal.policyAggree" type="checkbox"><span>To complete registration, please read and agree to our <a fancybox class="fancybox.ajax" href="/templates/popup-pages/terms-and-policy/terms-and-policy.html" ng-click="signupModal.readPloicy();">Terms and Conditions</a></span> 
+        </label> <span class="error-message" ng-show="form.signup.$valid && (!signupModal.policyAggree || !signupModal.policyRead)">You must read terms and conditions.</span> </div>
+    <div class="form-group" ng-show="!signupModal.success.show"> <button type="submit" class="btn btn-block btn-sm btn-primary">Register</button> </div>
+    <div class="success-message" ng-show="signupModal.success.show">
+        <h5 class="text-info">{{signupModal.success.message}}</h5> </div>
+</form>

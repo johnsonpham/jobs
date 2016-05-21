@@ -1,0 +1,14 @@
+<section class="section feedbacks" ng-controller="FeedbacksCtrl as feedbacks">
+    <div class="title-block">
+        <h2 class="title">What Users are Saying</h2> </div>
+    <div class="container feedback-container">
+        <div class="left-quote"> <i class="fa fa-quote-left"></i> </div>
+        <div class="right-quote"> <i class="fa fa-quote-right"></i> </div>
+        <flex-slider slide="comment in feedbacks.comments track by $index" control-nav="true" direction-nav="false">
+            <li class="feedback">
+                <div class="comment"> {{comment.message}} </div>
+                <div class="author"> {{comment.author}} </div>
+            </li>
+        </flex-slider>
+    </div>
+</section>

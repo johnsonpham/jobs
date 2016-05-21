@@ -1,0 +1,22 @@
+<div class="add-comments" ng-controller="CareersAddCommentsCtrl as addComments">
+    <div class="logo-block">
+        <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+    </div>
+    <form class="sofnet-form" novalidate name="forms.editProfile" ng-submit="editProfile.updateProfile(app.user)">
+        <div class="row form-group" ng-class="{
+                'has-error': forms.editProfile.$submitted && 
+                    (
+                        forms.editProfile.fullname.$error.required ||
+                        editProfile.error
+                    )
+                ,
+                'has-success': forms.editProfile.$submitted && forms.editProfile.fullname.$valid
+                }">
+            <div class="col-md-4"> <label for="fullname">Comment</label> </div>
+            <div class="col-md-8"> <textarea type="text" name="fullname" class="form-control" rows="3" id="fullname" autofocus="" ng-model="app.user.fullName" ng-disabled="editProfile.loading" required></textarea> <span class="error-message" ng-show="forms.editProfile.$submitted && forms.editProfile.fullname.$error.required">Please enter Comment.</span>                </div>
+        </div>
+        <div class="row form-group">
+            <div class="offset-md-4 col-md-8"> <button type="submit" class="btn btn-sm btn-primary">OK</button> <button type="button" class="btn btn-sm btn-secondary" ng-click="closeFancyBox()">Cancel</button> </div>
+        </div>
+    </form>
+</div>

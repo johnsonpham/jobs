@@ -1,0 +1,112 @@
+<!-- Accordion begin -->
+<div id="tab3Accordion" class="auth-accordion" accordion>
+    <!-- Profile Details Section -->
+    <!-- Profile Details Section -->
+    <div class="accordion_in acc_active">
+        <div class="acc_head">Profile Details</div>
+        <div class="acc_content">
+            <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && 
+                        (
+                            form.signup.fullname.$error.required ||
+                            signupModal.error
+                        )
+                    ,
+                    'has-success': form.signup.$submitted && form.signup.fullname.$valid
+                    }">
+                <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="Please enter your Real Name, for people you know to recognize you. No Nicknames or Aliases."></i> </a>
+                <div class="sofnet-icon"> <i class="fa fa-user"></i> </div> <input type="text" name="fullname" class="form-control" placeholder="Full Name" id="fullname" autofocus="" ng-model="signupModal.userData.fullName" ng-disabled="signupModal.loading" required> <span class="error-message"
+                    ng-show="form.signup.$submitted && form.signup.fullname.$error.required">Please enter Full Name.</span> </div>
+            <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && 
+                        (
+                            form.signup.workEmail.$error.required ||
+                            form.signup.workEmail.$error.email || 
+                            signupModal.error
+                        )
+                    ,
+                    'has-success': form.signup.$submitted && form.signup.workEmail.$valid && !signupModal.error
+                    }">
+                <div class="sofnet-icon"> <i class="fa fa-envelope"></i> </div> <input type="email" name="workEmail" class="form-control" placeholder="Work Email" id="workEmail" autofocus="" ng-model="signupModal.userData.email" ng-disabled="signupModal.loading" required>
+                <span
+                    class="error-message" ng-show="form.signup.$submitted && form.signup.workEmail.$error.required">Please enter your Email address.</span> <span class="error-message" ng-show="form.signup.$submitted && form.signup.workEmail.$error.email">Invalid Email address.</span> <span class="error-message" ng-show="form.signup.$submitted && signupModal.error">{{signupModal.error}}</span>                    </div>
+            <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && (
+                        form.signup.phone.$error.required ||
+                        form.signup.phone.$error.pattern
+                    ),
+                    'has-success': form.signup.$submitted && form.signup.phone.$valid
+                    }">
+                <div class="sofnet-icon"> <i class="fa fa-phone"></i> </div>
+                <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="Example: 8881234567"></i> </a> <input type="text" name="phone" class="form-control" placeholder="Telephone" id="phone" autofocus="" ng-model="signupModal.userData.telephone"
+                    ng-disabled="signupModal.loading" ng-pattern="/^\d{3}\d{3}\d{4}$/" required> <span class="error-message" ng-show="form.signup.$submitted && form.signup.phone.$error.required">Please enter your phone.</span> <span class="error-message"
+                    ng-show="form.signup.$submitted && form.signup.phone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span> </div>
+            <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && (
+                        form.signup.password.$error.required ||
+                        form.signup.password.$error.pattern ||
+                        (form.signup.password.$invalid && form.signup.password.$dirty)
+                    ),
+                    'has-success': form.signup.$submitted && form.signup.password.$valid
+                }">
+                <div class="sofnet-icon"> <i class="fa fa-lock"></i> </div> <input type="password" name="password" class="form-control" placeholder="Password" id="password" autofocus="" ng-model="signupModal.userData.password" ng-minlength="6" ng-maxlength="10" ng-pattern="/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/"
+                    ng-disabled="signupModal.loading" required> <span class="error-message" ng-show="form.signup.$submitted && form.signup.password.$error.required">Please enter password.</span> <span class="error-message" ng-show="form.signup.$submitted && form.signup.password.$error.pattern">Please use alphanumeric characters for password.</span>                <span class="error-message" ng-show="form.signup.$submitted && 
+                        !form.signup.password.$error.pattern && (
+                        form.signup.password.$error.minlength || 
+                        form.signup.password.$error.maxlength
+                    )">The password should be between 6 and 10 characters long.</span> </div>
+            <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && (
+                        form.signup.password2.$error.required ||
+                        (form.signup.password2.$invalid && form.signup.password2.$dirty)
+                    ),
+                    'has-success': form.signup.$submitted && form.signup.password2.$valid
+                }">
+                <div class="sofnet-icon"> <i class="fa fa-lock"></i> </div> <input type="password" name="password2" class="form-control" placeholder="Retype Password" id="retypePassword" autofocus="" ng-model="signupModal.userData.retypePassword" ng-disabled="signupModal.loading"
+                    match="signupModal.userData.password" required> <span class="error-message" ng-show="form.signup.$submitted && form.signup.password2.$error.required">Please retype password.</span> <span class="error-message" ng-show="form.signup.$submitted &&
+                        !form.signup.password2.$error.required && (
+                        (form.signup.password.$invalid && form.signup.password.$dirty) || 
+                        (form.signup.password2.$invalid && form.signup.password2.$dirty)
+                    )">Passwords doesn't match.</span> </div>
+        </div>
+    </div>
+    <!-- Company Details Section -->
+    <div class="accordion_in">
+        <div class="acc_head"> Company Details</div>
+        <div class="acc_content">
+            <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && form.signup.companyName.$error.required,
+                    'has-success': form.signup.$submitted && form.signup.companyName.$valid
+                    }">
+                <div class="sofnet-icon"> <i class="fa fa-briefcase"></i> </div> <input type="text" name="companyName" class="form-control" placeholder="Name" id="companyName" autofocus="" ng-model="signupModal.userData.company.name" ng-disabled="signupModal.loading" required>                <span class="error-message" ng-show="form.signup.$submitted && form.signup.companyName.$error.required">Please enter Company Name.</span> </div>
+            <div class="form-group">
+                <div class="sofnet-icon"> <i class="fa fa-road"></i> </div> <input type="text" name="companyAddress" class="form-control" placeholder="Address" id="companyAddress" autofocus="" ng-model="signupModal.userData.company.address" ng-disabled="signupModal.loading"> </div>
+            <div class="form-group">
+                <div class="sofnet-icon"> <i class="fa fa-map-marker"></i> </div> <select class="form-control" ng-model="signupModal.userData.company.country" ng-init="signupModal.userData.company.country = ''" ng-disabled="signupModal.loading">
+                    <option value="">Country</option>
+                    <option ng-repeat="country in signupModal.countries"
+                        ng-selected="{{country == signupModal.userData.company.country}}"
+                        value="{{country}}">{{country}}</option>
+                </select> </div>
+            <div class="form-group">
+                <div class="sofnet-icon"> <i class="fa fa-street-view"></i> </div> <input type="text" name="companyState" class="form-control" placeholder="State" id="companyState" autofocus="" ng-model="signupModal.userData.company.state" ng-disabled="signupModal.loading"> </div>
+            <div class="form-group">
+                <div class="sofnet-icon"> <i class="fa fa-building"></i> </div> <input type="text" name="companyCity" class="form-control" placeholder="City" id="companyCity" autofocus="" ng-model="signupModal.userData.company.city" ng-disabled="signupModal.loading"> </div>
+            <div
+                class="form-group">
+                <div class="sofnet-icon"> <i class="fa fa-envelope-square"></i> </div> <input type="text" name="companyPostalCode" class="form-control" placeholder="Postal Code" id="companyPostalCode" autofocus="" ng-model="signupModal.userData.company.postalCode" ng-disabled="signupModal.loading">                </div>
+        <div class="form-group" ng-class="{
+                    'has-error': form.signup.$submitted && (
+                        form.signup.workPhone.$error.required ||
+                        form.signup.workPhone.$error.pattern
+                    ),
+                    'has-success': form.signup.$submitted && form.signup.workPhone.$valid
+                    }">
+            <div class="sofnet-icon"> <i class="fa fa-phone"></i> </div>
+            <a href="" class="sofnet-icon info-icon"> <i class="fa fa-info-circle" tooltip data-placement="right" title="Example: 8881234567"></i> </a> <input type="text" name="workPhone" class="form-control" placeholder="Work Telephone" id="workPhone" autofocus="" ng-model="signupModal.userData.company.workTelephone"
+                ng-disabled="signupModal.loading" ng-pattern="/^\d{3}\d{3}\d{4}$/" required> <span class="error-message" ng-show="form.signup.$submitted && form.signup.workPhone.$error.required">Please enter your phone.</span> <span class="error-message"
+                ng-show="form.signup.$submitted && form.signup.workPhone.$error.pattern">Please provide your phone in correct format, Eg. 8881234567.</span> </div>
+    </div>
+</div>
+</div>
+<!-- Accordion end -->

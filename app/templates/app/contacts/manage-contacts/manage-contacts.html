@@ -1,0 +1,92 @@
+<section class="section sub-page manage-contacts">
+    <div class="box-container">
+        <div class="sub-page-header">
+            <div class="container">
+                <h2>Manage Contacts</h2>
+                <p class="lead">Keep reading this page to figure out how we got started and who is behind it!</p>
+            </div>
+        </div>
+        <div class="container sub-page-content" ng-if="manageContacts.contacts.length">
+            <div class="row">
+                <div class="col-md-4 col-lg-4" id="contacts-groups">
+                    <div class="group-container">
+                        <div class="group-container-header">
+                            <h3>GROUPS</h3>
+                            <span><i class="fa fa-plus-square" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="group-container-details">
+                            <ul class="group-list">
+                                <li class="group-item active" ng-click="manageContacts.filterContactByGroup('', $event)">
+                                    All
+                                    <strong>{{manageContacts.contacts.length}}</strong>
+                                </li>
+                                <li class="group-item" ng-repeat="(name, total) in manageContacts.groups track by $index" ng-click="manageContacts.filterContactByGroup(name, $event)">
+                                   {{name}}
+                                    <strong>{{total}}</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-8" id="contacts-members">
+                    <div class="group-container">
+                        <div class="group-container-header">
+                            <h3>MEMBERS</h3>
+                        </div>
+                        <div class="group-container-details">
+                            <datatable-wrapper element-selector=".contacts-toolbar" ng-show="manageContacts.loading">
+                                <table datatable="ng" class="table table-sm table-bordered parent-table" cellspacing="0" width="100%" dt-options="manageContacts.dtOptions" dt-column-defs="manageContacts.dtColumns" dt-instance="manageContacts.dtInstance">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-md-left">First Name</th>
+                                        <th class="text-md-left">Last Name</th>
+                                        <th class="text-md-left">Email</th>
+                                        <th class="col-small">Phone</th>
+                                        <th class="col-small text-center">Source</th>
+                                        <th class="col-contact-action"></th>
+                                        <th class="member-groups"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="(index, contact) in manageContacts.contacts | filter:{ group: manageContacts.groupName } track by $index" class="contact-item">
+                                        <td>{{ contact.firstName }}</td>
+                                        <td>{{ contact.lastName }}</td>
+                                        <td>{{ contact.email }}</td>
+                                        <td>{{ contact.phoneNumber }}</td>
+                                        <td class="text-center">
+                                            <img src="assets/ic-{{ contact.source }}.png" alt="" tooltip data-placement="top" title="" data-original-title="{{ contact.source }}">
+                                        </td>
+                                        <td class="col-contact-action text-center">
+                                            <span type="button" ng-click="manageContacts.modifyContact(contact)" tooltip data-placement="top" title="" data-original-title="Edit contact"><i class="fa fa-edit"></i></span>
+                                            <span type="button" ng-click="manageContacts.removeContact(contact)" tooltip data-placement="top" title="" data-original-title="Delete contact"><i class="fa fa-trash-o"></i></span>
+                                        </td>
+                                        <td class="member-groups">
+                                            <div class="add-group-popover" id="menu1" data-toggle="dropdown">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <ul class="dropdown-menu groups dropdown-menu-right" role="menu" aria-labelledby="menu1">
+                                                <li role="presentation" ng-repeat="(name, total) in manageContacts.groups track by $index">
+                                                    <input type="checkbox" value="{{name}}" ng-model="group.selected" ng-click="manageContacts.editGroup(group, name, contact, $event)" ng-checked="contact.group.indexOf(name) != -1"> {{name}}
+                                                </li>
+                                                <li class="presentation">
+                                                    <a ng-click="manageContacts.createGroup(contact)" ng-show="!contact.isNewGroup">Create New Group</a>
+                                                    <div ng-show="contact.isNewGroup">
+                                                        <input type="text" name="groupName" ng-model="contact.newGroupName">
+                                                        <a ng-click="manageContacts.addGroup(contact.newGroupName)">create</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </datatable-wrapper>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spinner" ng-if="!manageContacts.loading"></div>
+<!-- End manage contacts section

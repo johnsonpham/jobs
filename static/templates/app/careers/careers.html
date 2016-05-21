@@ -1,0 +1,54 @@
+<section class="section careers">
+    <div class="table-responsive">
+        <datatable-wrapper element-selector=".careers-toolbar">
+            <table datatable="ng" class="table table-sm table-bordered parent-table" cellspacing="0" width="100%" dt-options="careers.dtOptions" dt-column-defs="careers.dtColumns" dt-instance="careers.dtInstance">
+                <thead>
+                    <tr>
+                        <th class="td-block"> <label>
+				            	<input class="checkbox" type="checkbox" ng-model="careers.selectedAll" ng-click="careers.selectAllJobs()">
+				            	<span></span>
+			            	</label> </th>
+                        <th>View More</th>
+                        <th>Job ID</th>
+                        <th>Date Posted</th>
+                        <th>Posted By</th>
+                        <th>Title</th>
+                        <th>Profession</th>
+                        <th>Salary</th>
+                        <th>Duration</th>
+                        <th>Referral Fee</th>
+                        <th>Type</th>
+                        <th># of Applications</th>
+                        <th>State, City</th>
+                        <th>Country</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(index, job) in careers.jobs track by index">
+                        <td class="td-block"> <label>
+				            	<input class="checkbox" type="checkbox" ng-model="job.selected" ng-click="careers.selectJob(job)">
+				            	<span></span>
+			            	</label> </td>
+                        <td class="td-block">
+                            <a class="view-more" href="" ng-click="careers.childInfo(job, $event)"> <i class="fa fa-plus-square"></i> </a>
+                        </td>
+                        <td>{{ job.id }}</td>
+                        <td>{{ job.postedDate | date : 'dd MMM yyyy HH:mm:ss'}}</td>
+                        <td>{{ job.postedBy }}</td>
+                        <td>{{ job.title }}</td>
+                        <td>{{ job.profession }}</td>
+                        <td>{{ job.salary.currency + " " + job.salary.amount + " " + job.salary.type }}</td>
+                        <td>{{ job.duration }}</td>
+                        <td>{{ job.referralFee }}</td>
+                        <td>{{ job.type }}</td>
+                        <td>{{ job.applicantsCount }}</td>
+                        <td>{{ job.location.state + ", " + job.location.city}}</td>
+                        <td>{{ job.location.country}}</td>
+                        <td>{{ job.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </datatable-wrapper>
+    </div>
+</section>

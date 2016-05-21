@@ -1,0 +1,56 @@
+<div class="authWrapper login">
+    <div class="auth-container">
+        <div class="auth-box">
+            <form class="sofnet-form" name="loginForm" novalidate ng-submit="login.login()">
+                <div class="logo-block">
+                    <a ui-sref="app.home"> <img class="logo" src="assets/logo.png"> </a>
+                </div>
+                <div class="form-group">
+                    <p class="alert alert-danger" ng-show="login.error.show"> <button type="button" class="close" ng-click="login.cleanError()">
+							<i class="fa fa-times"></i>
+						</button> <strong><i class="fa fa-exclamation-triangle"></i></strong> {{login.error.message}} </p>
+                </div>
+                <div class="form-group" ng-class="{
+						'has-error': loginForm.$submitted && 
+							(
+								loginForm.email.$error.required ||
+								loginForm.email.$error.email
+							)
+						,
+						'has-success': loginForm.$submitted && loginForm.email.$valid
+						}">
+                    <div class="sofnet-icon"> <i class="fa fa-user"></i> </div> <input type="email" name="email" class="form-control" placeholder="Email" id="email" autofocus="" ng-model="login.data.email" ng-disabled="login.loading" required> <span class="error-message" ng-show="loginForm.$submitted && loginForm.email.$error.required">Please enter your email.</span>                    <span class="error-message" ng-show="loginForm.$submitted && loginForm.email.$error.email">Invalid Email address.</span> </div>
+                <div class="form-group" ng-class="{
+						'has-error': loginForm.$submitted &&
+							(
+								loginForm.password.$error.required || 
+								loginForm.password.$error.pattern ||
+								loginForm.password.$error.minlength || 
+								loginForm.password.$error.maxlength
+							)
+						,
+						'has-success': loginForm.$submitted && loginForm.password.$valid
+					}">
+                    <div class="sofnet-icon"> <i class="fa fa-lock"></i> </div> <input type="password" name="password" class="form-control" placeholder="Password" id="password" ng-model="login.data.password" ng-disabled="login.loading" ng-minlength="6" ng-maxlength="10" ng-pattern="/^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/"
+                        required> <span class="error-message" ng-show="loginForm.$submitted && loginForm.password.$error.required">Please enter password.</span> <span class="error-message" ng-show="loginForm.$submitted && loginForm.password.$error.pattern">Please use alphanumeric characters for password.</span>                    <span class="error-message" ng-show="loginForm.$submitted && 
+                        	!loginForm.password.$error.pattern && (
+                            loginForm.password.$error.minlength || 
+                            loginForm.password.$error.maxlength
+                        )">The password should be between 6 and 10 characters long.</span> </div>
+                <div class="form-group"> <button type="submit" class="btn btn-sm btn-block btn-primary">Login</button> </div>
+                <ul class="auth-menu">
+                    <li class="menu-item"> <a class="menu-link" ng-click="auth.openActivationModal()" data-toggle="modal" data-target="#sendActivationLinkModal" href="">
+						 	Activate Account
+						 </a> </li>
+                    <li class="menu-item"> <a class="menu-link" ng-click="auth.openSignupModal()" data-toggle="modal" data-target="#signupModal" href="">
+							Sign Up
+						</a> </li>
+                    <li class="menu-item"> <a class="menu-link" ng-click="auth.openForgotPassModal()" data-toggle="modal" data-target="#forgotPassModal" href="">
+						 	Forgot Password?
+						 </a> </li>
+                </ul>
+            </form>
+            <footer class="auth-footer"> Copyright 2014 All Rights Resevered. www.softnet.com </footer>
+        </div>
+    </div>
+</div>
