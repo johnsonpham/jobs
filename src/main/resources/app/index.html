@@ -1,215 +1,172 @@
 <!doctype html>
 <html class="no-js" lang="en" ng-app="softnetApp" ng-controller="MainCtrl as main">
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ISoftnet</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="icon" href="assets/favicon.ico">
-
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-
-        <!-- build:css css/vendor.css -->
-        <link rel="stylesheet" href="css/vendor.css">
-        <!-- /build -->
-        
-        <!-- build:css css/app.css -->
-        <link rel="stylesheet" href="css/app.css">
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/datatable-ext.css">
-        <!-- /build -->
-        
-        <!-- build:css css/pages.css -->
-        <link rel="stylesheet" href="css/pages/profile.css">
-        <link rel="stylesheet" href="css/pages/home.css">
-        <link rel="stylesheet" href="css/pages/careers.css">
-        <link rel="stylesheet" href="css/pages/contact-us.css">
-        <link rel="stylesheet" href="css/pages/about-us.css">
-        <link rel="stylesheet" href="css/pages/help.css">
-        <link rel="stylesheet" href="css/pages/news.css">
-        <link rel="stylesheet" href="css/pages/why-softnet.css">
-        <link rel="stylesheet" href="css/pages/report-abuse.css">
-        <link rel="stylesheet" href="css/pages/quick-links.css">
-        <link rel="stylesheet" href="css/pages/contacts.css">
-        <!-- /build -->
-
-        <!-- responsive -->
-        <link rel="stylesheet" href="css/responsive.css">
-    </head>
-
-    <body>
-        <div ui-view role="page"></div>
-        <!-- build:js js/vendor.js -->
-        <script src="js/vendor.js"></script>
-        <!-- /build -->
-        
-        <script type="text/javascript">
-            var switchTo5x = true;
-        </script>
-        <!--<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-        <script type="text/javascript">
-            stLight.options(
-            {
-                publisher: "9d5aeb45-1a39-4562-a110-b0928b446fdf",
-                doNotHash: false,
-                doNotCopy: false,
-                hashAddressBar: false
-            });
-        </script>-->
-        <!-- build:js js/app-templates.js -->
-        <script src="js/app-templates.js"></script>
-        <!-- /build -->
-        
-        <!-- build:js js/app.js -->
-        <!--app-->
-        <script src="js/app.js"></script>
-        <script src="js/config.js"></script>
-        <script src="js/routes.js"></script>
-        
-        <!--main-->
-        <script src="js/main.js"></script>
-        
-        <!--authentication-->
-        <script src="js/shared/auth/auth.service.js"></script>
-        <script src="js/shared/auth/auth.controller.js"></script>
-        <script src="js/shared/auth/auth.config.js"></script>
-        <script src="js/shared/auth/auth.activate-account.controller.js"></script>
-        <script src="js/shared/auth/auth.forgot-pass-modal.controller.js"></script>
-        <script src="js/shared/auth/auth.login-modal.controller.js"></script>
-        <script src="js/shared/auth/auth.login.controller.js"></script>
-        <script src="js/shared/auth/auth.logout.controller.js"></script>
-        <script src="js/shared/auth/auth.signup-modal.controller.js"></script>
-        <script src="js/shared/auth/auth.send-activation-link-modal.controller.js"></script>
-        
-        <!--common-->
-        <script src="js/shared/common/accordion.directive.js"></script>
-        <script src="js/shared/common/datatable-wrapper.directive.js"></script>
-        <script src="js/shared/common/fancybox.directive.js"></script>
-        <script src="js/shared/common/include-replace.directive.js"></script>
-        <script src="js/shared/common/match.directive.js"></script>
-        <script src="js/shared/common/scroll-on-click.directive.js"></script>
-        <!--<script src="js/shared/common/sharethis.directive.js"></script>-->
-        <script src="js/shared/common/tooltip.directive.js"></script>
-        <script src="js/shared/common/confirm-modal.controller.js"></script>
-        <script src="js/shared/common/youtube.directive.js"></script>
-        <script src="js/shared/common/googlemap.directive.js"></script>
-        
-        <!--services-->
-        <script src="js/services/util.service.js"></script>
-        <script src="js/services/helper.service.js"></script>
-        <script src="js/services/users.service.js"></script>
-        
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ISoftnet</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <!-- build:css css/vendor.css -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <!-- /build -->
+    <!-- build:css css/app.css -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/datatable-ext.css">
+    <!-- /build -->
+    <!-- build:css css/pages.css -->
+    <link rel="stylesheet" href="css/pages/profile.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/pages/careers.css">
+    <link rel="stylesheet" href="css/pages/contact-us.css">
+    <link rel="stylesheet" href="css/pages/about-us.css">
+    <link rel="stylesheet" href="css/pages/help.css">
+    <link rel="stylesheet" href="css/pages/news.css">
+    <link rel="stylesheet" href="css/pages/why-softnet.css">
+    <link rel="stylesheet" href="css/pages/report-abuse.css">
+    <link rel="stylesheet" href="css/pages/quick-links.css">
+    <link rel="stylesheet" href="css/pages/contacts.css">
+    <!-- /build -->
+    <!-- responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div ui-view role="page"></div>
+<!-- build:js js/vendor.js -->
+<script src="js/vendor.js"></script>
+<!-- /build -->
+<script type="text/javascript">
+    var switchTo5x = true;
+</script>
+<!--<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+    stLight.options(
+    {
+        publisher: "9d5aeb45-1a39-4562-a110-b0928b446fdf",
+        doNotHash: false,
+        doNotCopy: false,
+        hashAddressBar: false
+    });
+</script>-->
+<!-- build:js js/app-templates.js -->
+<script src="js/app-templates.js"></script>
+<!-- /build -->
+<!-- build:js js/app.js -->
+<!--app-->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/routes.js"></script>
+<!--main-->
+<script src="js/main.js"></script>
+<!--authentication-->
+<script src="js/shared/auth/auth.service.js"></script>
+<script src="js/shared/auth/auth.controller.js"></script>
+<script src="js/shared/auth/auth.config.js"></script>
+<script src="js/shared/auth/auth.activate-account.controller.js"></script>
+<script src="js/shared/auth/auth.forgot-pass-modal.controller.js"></script>
+<script src="js/shared/auth/auth.login-modal.controller.js"></script>
+<script src="js/shared/auth/auth.login.controller.js"></script>
+<script src="js/shared/auth/auth.logout.controller.js"></script>
+<script src="js/shared/auth/auth.signup-modal.controller.js"></script>
+<script src="js/shared/auth/auth.send-activation-link-modal.controller.js"></script>
+<!--common-->
+<script src="js/shared/common/accordion.directive.js"></script>
+<script src="js/shared/common/datatable-wrapper.directive.js"></script>
+<script src="js/shared/common/fancybox.directive.js"></script>
+<script src="js/shared/common/include-replace.directive.js"></script>
+<script src="js/shared/common/match.directive.js"></script>
+<script src="js/shared/common/scroll-on-click.directive.js"></script>
+<!--<script src="js/shared/common/sharethis.directive.js"></script>-->
+<script src="js/shared/common/tooltip.directive.js"></script>
+<script src="js/shared/common/confirm-modal.controller.js"></script>
+<script src="js/shared/common/youtube.directive.js"></script>
+<script src="js/shared/common/googlemap.directive.js"></script>
+<!--services-->
+<script src="js/services/util.service.js"></script>
+<script src="js/services/helper.service.js"></script>
+<script src="js/services/users.service.js"></script>
 <!--home page-->
-        <script src="js/pages/home/home.controller.js"></script>
-        <script src="js/pages/home/slider.controller.js"></script>
-        <script src="js/pages/home/feedbacks.controller.js"></script>
-        <script src="js/pages/home/services.controller.js"></script>
-        
+<script src="js/pages/home/home.controller.js"></script>
+<script src="js/pages/home/slider.controller.js"></script>
+<script src="js/pages/home/feedbacks.controller.js"></script>
+<script src="js/pages/home/services.controller.js"></script>
 <!--career page-->
-        <script src="js/pages/careers/careers.service.js"></script>
-        <script src="js/pages/careers/careers.controller.js"></script>
-        
-        <script src="js/pages/careers/career-buttons.controller.js"></script>
-        <script src="js/pages/careers/career-buttons.directive.js"></script>
-        
-        <script src="js/pages/careers/career-links.controller.js"></script>
-        <script src="js/pages/careers/career-links.directive.js"></script>
-        
-        <script src="js/pages/careers/careers-add-comments-modal.controller.js"></script>
-        <script src="js/pages/careers/careers-add-comments.controller.js"></script>
-        
-        <script src="js/pages/careers/career-star-rating-modal-controller.js"></script>
-        <script src="js/pages/careers/career-star-rating.controller.js"></script>
-        <script src="js/pages/careers/career-star-rating.directive.js"></script>
-
-        <!-- page status -->
-        <script src="js/pages/careers/careers-status.controller.js"></script>
-        <script src="js/pages/careers/careers-status.directive.js"></script>
-        <!-- end page status -->
-
-        <!-- page events -->
-        <script src="js/pages/careers/careers-events.controller.js"></script>
-        <!-- end page events -->
-
-        <!-- page applicants -->
-        <script src="js/pages/careers/careers-applicants.controller.js"></script>
-        <script src="js/pages/careers/careers-applicants.directive.js"></script>
-        <!-- end page applicants -->
-
-        <script src="js/pages/careers/career-edit-modal.controller.js"></script>
-        
-        <script src="js/pages/careers/careers-toolbar.controller.js"></script>
-        <script src="js/pages/careers/careers-toolbar.directive.js"></script>
-        <script src="js/pages/careers/careers-child-table.directive.js"></script>
-
-        <!--end career page-->
-
-         <!-- page header -->
-        <script src="js/pages/_common/header/header.controller.js"></script> 
-
-        <!-- page footer -->
-        <script src="js/pages/_common/footer/footer.controller.js"></script> 
-
-        <!-- Information Links -->
-
-        <!-- page about-us -->
-        <script src="js/pages/about-us/about-us.controller.js"></script> 
-        <!-- page help fag -->
-        <script src="js/pages/help/help.controller.js"></script>        
-        <!-- page new post -->
-        <script src="js/pages/news/news-page.controller.js"></script> 
-        <!-- page new post -->
-        <script src="js/pages/quick-links/quick-links.controller.js"></script>
-               
-        <!-- End Information Links -->
-
-        <!-- Support Links -->
-
-        <!-- page report abuse -->
-        <script src="js/popup/report-abuse/report-abuse.controller.js"></script> 
-        <!-- page feedback -->
-        <script src="js/popup/feedback/feedback.controller.js"></script>
-        <!-- page suggestions -->
-        <script src="js/popup/suggestions/suggestions.controller.js"></script>  
-        <!-- page contact-support -->
-        <script src="js/popup/contact-support/contact-support.controller.js"></script>
-
-        <!-- End Support Links -->
-
-        <!-- end page footer -->
-
-        <!-- header menu link page-->
-
-         <!-- page why softnet -->
-        <script src="js/pages/why-softnet/why-softnet.controller.js"></script> 
-        <!-- page contact-us -->
-        <script src="js/pages/contact-us/contact-us.controller.js"></script>        
-
-        <!-- end header menu link page-->
-
-        <!-- alert popup -->
-        <script src="js/popup/alert/alert.controller.js"></script>
-        <!-- end alert popup-->
-
-
-        <!-- contacts sections -->
-
-        <!-- contacts service -->
-        <script src="js/pages/contacts/contacts.service.js"></script>
-        <!-- upload contacts page -->
-        <script src="js/pages/contacts/upload-contacts.controller.js"></script>
-        <script src="js/pages/contacts/upload-contacts-feedbacks.controller.js"></script>
-        <script src="js/pages/contacts/import-contacts.controller.js"></script>
-        <!-- manage contacts page -->
-        <script src="js/pages/contacts/manage-contacts.controller.js"></script>
-        <script src="js/pages/contacts/edit-contact-modal.controller.js"></script>
-        
-        <!-- end contacts sections -->
-
-        <!-- /build -->
-    </body>
-
+<script src="js/pages/careers/careers.service.js"></script>
+<script src="js/pages/careers/careers.controller.js"></script>
+<script src="js/pages/careers/career-buttons.controller.js"></script>
+<script src="js/pages/careers/career-buttons.directive.js"></script>
+<script src="js/pages/careers/career-links.controller.js"></script>
+<script src="js/pages/careers/career-links.directive.js"></script>
+<script src="js/pages/careers/careers-add-comments-modal.controller.js"></script>
+<script src="js/pages/careers/careers-add-comments.controller.js"></script>
+<script src="js/pages/careers/career-star-rating-modal-controller.js"></script>
+<script src="js/pages/careers/career-star-rating.controller.js"></script>
+<script src="js/pages/careers/career-star-rating.directive.js"></script>
+<!-- Post Job Page -->
+<script src="js/pages/my-jobs/post-job.controller.js"></script>
+<!-- page status -->
+<script src="js/pages/careers/careers-status.controller.js"></script>
+<script src="js/pages/careers/careers-status.directive.js"></script>
+<!-- end page status -->
+<!-- page events -->
+<script src="js/pages/careers/careers-events.controller.js"></script>
+<!-- end page events -->
+<!-- page applicants -->
+<script src="js/pages/careers/careers-applicants.controller.js"></script>
+<script src="js/pages/careers/careers-applicants.directive.js"></script>
+<!-- end page applicants -->
+<script src="js/pages/careers/career-edit-modal.controller.js"></script>
+<script src="js/pages/careers/careers-toolbar.controller.js"></script>
+<script src="js/pages/careers/careers-toolbar.directive.js"></script>
+<script src="js/pages/careers/careers-child-table.directive.js"></script>
+<!--end career page-->
+<!-- page header -->
+<script src="js/pages/_common/header/header.controller.js"></script>
+<!-- page footer -->
+<script src="js/pages/_common/footer/footer.controller.js"></script>
+<!-- Information Links -->
+<!-- page about-us -->
+<script src="js/pages/about-us/about-us.controller.js"></script>
+<!-- page help fag -->
+<script src="js/pages/help/help.controller.js"></script>
+<!-- page new post -->
+<script src="js/pages/news/news-page.controller.js"></script>
+<!-- page new post -->
+<script src="js/pages/quick-links/quick-links.controller.js"></script>
+<!-- End Information Links -->
+<!-- Support Links -->
+<!-- page report abuse -->
+<script src="js/popup/report-abuse/report-abuse.controller.js"></script>
+<!-- page feedback -->
+<script src="js/popup/feedback/feedback.controller.js"></script>
+<!-- page suggestions -->
+<script src="js/popup/suggestions/suggestions.controller.js"></script>
+<!-- page contact-support -->
+<script src="js/popup/contact-support/contact-support.controller.js"></script>
+<!-- End Support Links -->
+<!-- end page footer -->
+<!-- header menu link page-->
+<!-- page why softnet -->
+<script src="js/pages/why-softnet/why-softnet.controller.js"></script>
+<!-- page contact-us -->
+<script src="js/pages/contact-us/contact-us.controller.js"></script>
+<!-- end header menu link page-->
+<!-- alert popup -->
+<script src="js/popup/alert/alert.controller.js"></script>
+<!-- end alert popup-->
+<!-- contacts sections -->
+<!-- contacts service -->
+<script src="js/pages/contacts/contacts.service.js"></script>
+<!-- upload contacts page -->
+<script src="js/pages/contacts/upload-contacts.controller.js"></script>
+<script src="js/pages/contacts/upload-contacts-feedbacks.controller.js"></script>
+<script src="js/pages/contacts/import-contacts.controller.js"></script>
+<!-- manage contacts page -->
+<script src="js/pages/contacts/manage-contacts.controller.js"></script>
+<script src="js/pages/contacts/edit-contact-modal.controller.js"></script>
+<!-- end contacts sections -->
+<!-- /build -->
+</body>
 </html>

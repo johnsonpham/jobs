@@ -1,0 +1,215 @@
+<section class="section sub-page careers">
+    <div class="box-container">
+        <div class="sub-page-header">
+            <div class="container">
+                <h2>Post Job</h2>
+                <p class="lead">Keep reading this page to figure out how we got started and who is behind it!</p>
+            </div>
+        </div>
+        <div class="container sub-page-content">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs m-b-2" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-ng-click="postJob.setExternalLink()" data-toggle="tab" role="tab">
+                        <i class="fa fa-external-link" aria-hidden="true"></i> External Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-ng-click="postJob.setUploadFile()" data-toggle="tab" role="tab"><i class="fa fa-upload" aria-hidden="true"></i> Upload File</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-ng-click="postJob.setFillForm()" data-toggle="tab" role="tab"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Fill Form</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <form>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Job Details
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="form-group row" data-ng-show="externalLink">
+                                        <label for="inputEmail3" class="col-sm-2 form-control-label">Job Link<span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Link to site where job is posted">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" data-ng-show="uploadFile">
+                                        <label for="inputEmail3" class="col-sm-2 form-control-label">Job File<span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="file" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Title<span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" placeholder="Job title">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Short Description <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="3" placeholder="Write your short description here"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" data-ng-show="fillForm">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Full Description <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="5" placeholder="Write your full description here, max 1000 words"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" data-ng-show="fillForm">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Skills <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="3" placeholder="Should be comma seperated. e.g. JAVA, HTML, Team player"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Job Type <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <select name="" class="form-control">
+                                                <option value="1">Type 1</option>
+                                                <option value="2">Type 2</option>
+                                                <option value="3">Type 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Work Permit</label>
+                                        <div class="col-sm-10">
+                                            <select name="" class="form-control">
+                                                <option value="1">Type 1</option>
+                                                <option value="2">Type 2</option>
+                                                <option value="3">Type 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Profession <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <select name="" class="form-control">
+                                                <option value="1">Type 1</option>
+                                                <option value="2">Type 2</option>
+                                                <option value="3">Type 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Hiring Company
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-2 form-control-label">About</label>
+                                        <div class="col-sm-10">
+                                            <textarea name="" class="form-control" cols="30" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Name <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Department</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">HR Email <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Hiring Manager Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Website <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Job Location
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-2 form-control-label">Address</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="Your address">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">City <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="e.g. New York">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">State</label>
+                                        <div class="col-sm-10">
+                                            <select name="" class="form-control">
+                                                <option value="1">New York</option>
+                                                <option value="2">California</option>
+                                                <option value="3">Washington DC</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Postal Code</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="e.g. 70000">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 form-control-label">Country <span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <select name="" class="form-control">
+                                                <option value="1">The US</option>
+                                                <option value="2">Britain</option>
+                                                <option value="3">Vietnam</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-2">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <a class="btn btn-danger" href="#">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane" id="profile" role="tabpanel">...</div>
+                <div class="tab-pane" id="messages" role="tabpanel">...</div>
+            </div>
+        </div>
+    </div>
+</section><!--<div class="spinner" ng-if="!careers.loading"></div>-->
